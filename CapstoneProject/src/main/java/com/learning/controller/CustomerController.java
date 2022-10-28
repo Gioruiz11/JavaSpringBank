@@ -10,16 +10,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/api/customer")
 public class CustomerController {
-		//@PostMapping("/register")
-	
-		//@PostMapping("/{customerId}/account")
+	//@PostMapping("/register")
+	public void registerCustomer() {
 		
-		//@PutMapping("/{customerId}/account/{accountNumber}")
+	}
+	//@PostMapping("/{customerId}/account")
+	public void createCustomerAccount() {
 		
-		//@GetMapping("/{customerId}/account")
+	}	
+	//@PutMapping("/{customerId}/account/{accountNumber}")
 		
-		//GetMapping
-	// jean's methods
+	//@GetMapping("/{customerId}/account")
+	public void getAccountByCustomerId() {
+		
+	}
+	//@GetMapping("/{customerId}")
+	public void getCustomerByCustomerId() {
+		
+	}
+	//Jean's Methods
 	
 	@PutMapping("/:customerID")
 	public void updateCustomer() {
