@@ -10,7 +10,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/api/customer")
 public class CustomerController {
+		//@PostMapping("/register")
 	
+		//@PostMapping("/{customerId}/account")
+		
+		//@PutMapping("/{customerId}/account/{accountNumber}")
+		
+		//@GetMapping("/{customerId}/account")
+		
+		//GetMapping
 	// jean's methods
 	
 	@PutMapping("/:customerID")
