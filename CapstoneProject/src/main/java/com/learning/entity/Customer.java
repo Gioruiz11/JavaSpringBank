@@ -19,5 +19,5 @@ public class Customer {
 	private LocalDateTime dateOfCreation;
 	private String accountStatus;
 	// test msg
-	
+	// second test
 }
