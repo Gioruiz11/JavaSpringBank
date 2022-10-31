@@ -7,7 +7,7 @@ import javax.persistence.Id;
 
 @Entity
 public class Customer {
-	@Id
+	
 	private long customerId;
 	private String fullName;
 	private String userName;
@@ -15,6 +15,7 @@ public class Customer {
 	private String accountType;
 	private double accountBalance;
 	private String approved;
+	@Id
 	private long accountNumber;
 	private LocalDateTime dateOfCreation;
 	private String accountStatus;
