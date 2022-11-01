@@ -6,5 +6,6 @@ public class Beneficiary {
 	private enum active {
 		yes, no
     }
+	private long customerAccountNo;
 
 }
