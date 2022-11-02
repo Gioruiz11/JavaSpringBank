@@ -4,9 +4,12 @@ import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -20,8 +23,12 @@ public class Beneficiary {
 	private String beneficiaryName;  
 	private boolean active;
 	private boolean isApproved;
-	private long customerAccountNo;
+	
 	private Date addedDate;
+	
+	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+	@JoinColumn(name = "customer_id", nullable = false)
+	private Customer customer;
 	public long getBeneficiaryId() {
 		return beneficiaryId;
 	}
@@ -52,12 +59,7 @@ public class Beneficiary {
 	public void setApproved(boolean isApproved) {
 		this.isApproved = isApproved;
 	}
-	public long getCustomerAccountNo() {
-		return customerAccountNo;
-	}
-	public void setCustomerAccountNo(long customerAccountNo) {
-		this.customerAccountNo = customerAccountNo;
-	}
+	
 	public Date getAddedDate() {
 		return addedDate;
 	}
@@ -65,14 +67,14 @@ public class Beneficiary {
 		this.addedDate = addedDate;
 	}
 	public Beneficiary(long beneficiaryId, long beneficiaryAccountNo, String beneficiaryName, boolean active,
-			boolean isApproved, long customerAccountNo, Date addedDate) {
+			boolean isApproved, Date addedDate) {
 		super();
 		this.beneficiaryId = beneficiaryId;
 		this.beneficiaryAccountNo = beneficiaryAccountNo;
 		this.beneficiaryName = beneficiaryName;
 		this.active = active;
 		this.isApproved = isApproved;
-		this.customerAccountNo = customerAccountNo;
+		
 		this.addedDate = addedDate;
 	}
 	public Beneficiary() {

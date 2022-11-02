@@ -1,9 +1,12 @@
 package com.learning.entity;
 
 import java.time.LocalDateTime;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -18,6 +21,12 @@ public class Customer {
 	private int secretQuestion;
 	private String secretAnswer;
 	private boolean status;
+	@OneToMany(mappedBy="customer")
+    private Set<Beneficiary> beneficiaries;
+	@OneToMany(mappedBy="customer")
+    private Set<Account> accounts;
+	
+	
 	public long getCustomerId() {
 		return customerId;
 	}

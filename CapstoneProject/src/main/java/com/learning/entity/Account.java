@@ -4,16 +4,19 @@ import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="account")
 public class Account {
 	private String accountType;
-	private long customerId;
+	
 	private double accountBalance;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -21,18 +24,18 @@ public class Account {
 	private long accountNumber;
 	private Date dateOfCreation;
 	private boolean accountStatus;
+	
+	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+	@JoinColumn(name = "customer_id", nullable = false)
+	private Customer customer;
+	
 	public String getAccountType() {
 		return accountType;
 	}
 	public void setAccountType(String accountType) {
 		this.accountType = accountType;
 	}
-	public long getCustomerId() {
-		return customerId;
-	}
-	public void setCustomerId(long customerId) {
-		this.customerId = customerId;
-	}
+	
 	public double getAccountBalance() {
 		return accountBalance;
 	}
@@ -61,7 +64,7 @@ public class Account {
 			boolean accountStatus) {
 		super();
 		this.accountType = accountType;
-		this.customerId = customerId;
+		
 		this.accountBalance = accountBalance;
 		this.accountNumber = accountNumber;
 		this.dateOfCreation = dateOfCreation;
