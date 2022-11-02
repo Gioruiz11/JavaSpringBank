@@ -21,6 +21,7 @@ public class Customer {
 	private int secretQuestion;
 	private String secretAnswer;
 	private boolean status;
+	
 	@OneToMany(mappedBy="customer")
     private Set<Beneficiary> beneficiaries;
 	@OneToMany(mappedBy="customer")
@@ -75,8 +76,21 @@ public class Customer {
 	public void setStatus(boolean status) {
 		this.status = status;
 	}
+	public Set<Beneficiary> getBeneficiaries() {
+		return beneficiaries;
+	}
+	public void setBeneficiaries(Set<Beneficiary> beneficiaries) {
+		this.beneficiaries = beneficiaries;
+	}
+	public Set<Account> getAccounts() {
+		return accounts;
+	}
+	public void setAccounts(Set<Account> accounts) {
+		this.accounts = accounts;
+	}
 	public Customer(long customerId, String fullName, String userName, String password, String phone,
-			int secretQuestion, String secretAnswer, boolean status) {
+			int secretQuestion, String secretAnswer, boolean status, Set<Beneficiary> beneficiaries,
+			Set<Account> accounts) {
 		super();
 		this.customerId = customerId;
 		this.fullName = fullName;
@@ -86,11 +100,13 @@ public class Customer {
 		this.secretQuestion = secretQuestion;
 		this.secretAnswer = secretAnswer;
 		this.status = status;
+		this.beneficiaries = beneficiaries;
+		this.accounts = accounts;
 	}
 	public Customer() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
+
 	
 	
 	

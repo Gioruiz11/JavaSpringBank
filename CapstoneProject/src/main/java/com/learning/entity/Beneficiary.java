@@ -12,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="beneficiary")
 public class Beneficiary {
@@ -28,6 +30,7 @@ public class Beneficiary {
 	
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
 	@JoinColumn(name = "customer_id", nullable = false)
+	@JsonIgnore
 	private Customer customer;
 	public long getBeneficiaryId() {
 		return beneficiaryId;
@@ -66,22 +69,27 @@ public class Beneficiary {
 	public void setAddedDate(Date addedDate) {
 		this.addedDate = addedDate;
 	}
+	public Customer getCustomer() {
+		return customer;
+	}
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
 	public Beneficiary(long beneficiaryId, long beneficiaryAccountNo, String beneficiaryName, boolean active,
-			boolean isApproved, Date addedDate) {
+			boolean isApproved, Date addedDate, Customer customer) {
 		super();
 		this.beneficiaryId = beneficiaryId;
 		this.beneficiaryAccountNo = beneficiaryAccountNo;
 		this.beneficiaryName = beneficiaryName;
 		this.active = active;
 		this.isApproved = isApproved;
-		
 		this.addedDate = addedDate;
+		this.customer = customer;
 	}
 	public Beneficiary() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
-	
+
 	
 
 }
