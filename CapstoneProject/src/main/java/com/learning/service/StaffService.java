@@ -57,5 +57,25 @@ public class StaffService {
 		  
 		  
 	  }
+	public List<Beneficiary> getBenficiarybyId(int customerid){
+		
+		
+		return beneficiaryRepo.FindBenficiaryForCustomer(customerid);
+		
+		
+		
+	}
+	public void saveBeneficiary(Beneficiary beneficiary) {
+		
+		
+		beneficiaryRepo.save(beneficiary);
+	}
+	
+	
+	
+	
+	
+	  
+	  
 
 }
