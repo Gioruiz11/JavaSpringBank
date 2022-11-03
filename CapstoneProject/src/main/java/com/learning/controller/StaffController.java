@@ -1,7 +1,7 @@
 package com.learning.controller;
 
 import java.util.ArrayList;
-import java.util.Iterator;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.learning.entity.Account;
 import com.learning.entity.Beneficiary;
 import com.learning.entity.Customer;
@@ -41,10 +41,12 @@ public class StaffController {
 		
 	}
 	
-	@PutMapping("/beneficiary/{customerid}")
-	public ResponseEntity<List<Beneficiary>> approveBeneficiary(@PathVariable("customerid") int customerid) {
+	@PutMapping("/beneficiary/approve")
+	public ResponseEntity<List<Beneficiary>> approveBeneficiary(@RequestBody int customerid) {
 		List<Beneficiary> listBen= new ArrayList<>();
 		List<Beneficiary> listBen2= new ArrayList<>();
+		
+		
 		listBen=staffService.getBenficiarybyId(customerid);
 		Beneficiary beneficiary=null;
 		for (int i = 0; i < listBen.size(); i++) {
@@ -63,9 +65,22 @@ public class StaffController {
 	}
 	
 	@PutMapping("/account/approve")
-	public void approveAccts() {
+	public ResponseEntity<List<Account>> approveAccts(@RequestBody int customerid) {
+		List<Account> listAcc= new ArrayList<>();
+		List<Account> listAcc2= new ArrayList<>();
 		
 		
+	          
+		listAcc=staffService.getAccountbyId(customerid);
+		Account account=null;
+		for(int i=0; i< listAcc.size();i++) {
+			account=listAcc.get(i);
+			account.setAccountStatus(true);
+			staffService.saveAccount(account);
+			listAcc2.add(account);
+			
+		}
+		return ResponseEntity.ok(listAcc2);
 		
 		
 	}

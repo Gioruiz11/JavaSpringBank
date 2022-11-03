@@ -71,6 +71,19 @@ public class StaffService {
 		beneficiaryRepo.save(beneficiary);
 	}
 	
+  public List<Account> getAccountbyId(int customerid){
+		
+		
+		return accountRepo.FindAccountForCustomer(customerid);
+		
+		
+		
+	}
+	public void saveAccount(Account account) {
+		
+		
+		accountRepo.save(account);
+	}
 	
 	
 	
