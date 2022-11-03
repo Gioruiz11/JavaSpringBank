@@ -1,0 +1,26 @@
+#login{
+    width: 25%;
+    border: 1px solid black;
+    float: left;
+    margin-top: 12%;
+    margin-left: 7%;
+    padding-bottom: 5%;
+    border-radius: 5%;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    padding-right: 5%;
+}
+
+#home {
+    width: 35%;
+    float: left;
+    margin-left: 15%;
+    margin-top: 7%;
+}
+img {
+    height: 85%;
+    width: 75%;
+}
