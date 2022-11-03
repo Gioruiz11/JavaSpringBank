@@ -12,21 +12,25 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="account")
 public class Account {
-	private String accountType;
 	
-	private double accountBalance;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(nullable = false)
 	private long accountNumber;
 	private Date dateOfCreation;
 	private boolean accountStatus;
+	private String accountType;
+	
+	private double accountBalance;
 	
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
 	@JoinColumn(name = "customer_id", nullable = false)
+	@JsonIgnore
 	private Customer customer;
 	
 	public String getAccountType() {
@@ -60,20 +64,26 @@ public class Account {
 	public void setAccountStatus(boolean accountStatus) {
 		this.accountStatus = accountStatus;
 	}
-	public Account(String accountType, long customerId, double accountBalance, long accountNumber, Date dateOfCreation,
-			boolean accountStatus) {
+	public Customer getCustomer() {
+		return customer;
+	}
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+	public Account(long accountNumber, Date dateOfCreation, boolean accountStatus, String accountType,
+			double accountBalance, Customer customer) {
 		super();
-		this.accountType = accountType;
-		
-		this.accountBalance = accountBalance;
 		this.accountNumber = accountNumber;
 		this.dateOfCreation = dateOfCreation;
 		this.accountStatus = accountStatus;
+		this.accountType = accountType;
+		this.accountBalance = accountBalance;
+		this.customer = customer;
 	}
 	public Account() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
+
 	
 	
 }

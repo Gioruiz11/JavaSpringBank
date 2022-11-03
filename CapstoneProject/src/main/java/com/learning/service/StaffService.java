@@ -5,8 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.learning.entity.Account;
 import com.learning.entity.Beneficiary;
+import com.learning.entity.Customer;
+import com.learning.repo.AccountRepo;
 import com.learning.repo.BeneficiaryRepo;
+import com.learning.repo.CustomerRepo;
 import com.learning.repo.StaffRepo;
 
 @Service
@@ -16,6 +20,12 @@ public class StaffService {
 	  
 	  @Autowired
 	  BeneficiaryRepo beneficiaryRepo;
+	  
+	  @Autowired
+	  AccountRepo accountRepo;
+	  
+	  @Autowired
+	  CustomerRepo customerRepo;
 	  
 	  
 	  public List<Object[]> getBalanceInfo(int customerid){
@@ -27,6 +37,24 @@ public class StaffService {
 	  public List<Beneficiary> getBeneficaryforApproval(){
 		  
 		  return beneficiaryRepo.FindBenficiaryForApproval();
+		  
+	  }
+	  public List<Account> getAccountforApproval(){
+		  return accountRepo.FindAccountForApproval();
+		  
+		  
+	  }
+	  
+	  public List<Customer> getAllCustomers(){
+		  return customerRepo.findAll();
+		  
+		  
+		  
+	  }
+	  
+	  public Customer getcustomerByid(Long customerId) {
+		  return customerRepo.findById(customerId).get();
+		  
 		  
 	  }
 

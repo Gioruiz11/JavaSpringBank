@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.learning.entity.Account;
 import com.learning.entity.Beneficiary;
+import com.learning.entity.Customer;
 import com.learning.service.StaffService;
 
 @RestController
@@ -42,14 +44,13 @@ public class StaffController {
 		
 	}
 	
-	@GetMapping("/accounts/approve")
-	public void getAcctApprove() {
-		
-		
+	@GetMapping("/account/approval")
+	public List<Account> getAcctApprove() {
+		return staffService.getAccountforApproval();
 		
 	}
 	
-	@PutMapping("/accounts/approve")
+	@PutMapping("/account/approve")
 	public void approveAccts() {
 		
 		
@@ -57,9 +58,9 @@ public class StaffController {
 		
 	}
 	
-	@GetMapping("/customer")
-	public void getAllCustomers() {
-		
+	@GetMapping("/customers")
+	public List<Customer> getAllCustomers() {
+		return staffService.getAllCustomers();
 		
 		
 	}
@@ -70,8 +71,9 @@ public class StaffController {
 		
 		
 	}
-	@GetMapping("/customer/{customerID}")
-	public void getCustomersWithId() {
+	@GetMapping("/customer/{customerId}")
+	public Customer getCustomersWithId(@PathVariable("customerId") Long customerId) {
+		return staffService.getcustomerByid(customerId);
 		
 		
 		
