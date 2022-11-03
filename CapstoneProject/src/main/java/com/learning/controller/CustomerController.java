@@ -35,7 +35,9 @@ public class CustomerController {
 		return accountRepo.save(account);
 	}	
 	@PutMapping("/{customerId}/account/{accountNumber}")
+	public void approveAccount() {
 		
+	}
 	@GetMapping("/{customerId}/account")
 	public List<Account> getAccountByCustomerId(long customerId) {
 		return accountRepo.findAll();
