@@ -8,10 +8,12 @@ import org.springframework.stereotype.Service;
 import com.learning.entity.Account;
 import com.learning.entity.Beneficiary;
 import com.learning.entity.Customer;
+import com.learning.entity.Transaction;
 import com.learning.repo.AccountRepo;
 import com.learning.repo.BeneficiaryRepo;
 import com.learning.repo.CustomerRepo;
 import com.learning.repo.StaffRepo;
+import com.learning.repo.TransactionRepo;
 
 @Service
 public class StaffService {
@@ -26,6 +28,8 @@ public class StaffService {
 	  
 	  @Autowired
 	  CustomerRepo customerRepo;
+	  @Autowired
+	  TransactionRepo transactionRepo;
 	  
 	  
 	  public List<Object[]> getBalanceInfo(int customerid){
@@ -57,7 +61,15 @@ public class StaffService {
 		  
 		  
 	  }
-	public List<Beneficiary> getBenficiarybyId(int customerid){
+	  public Account getaccountByid(Long accountId) {
+		  return accountRepo.findById(accountId).get();
+		  
+		  
+	  }
+	 
+		
+	  
+	public List<Beneficiary> getBenficiarybyId(long customerid){
 		
 		
 		return beneficiaryRepo.FindBenficiaryForCustomer(customerid);
@@ -71,7 +83,7 @@ public class StaffService {
 		beneficiaryRepo.save(beneficiary);
 	}
 	
-  public List<Account> getAccountbyId(int customerid){
+  public List<Account> getAccountbyId(long customerid){
 		
 		
 		return accountRepo.FindAccountForCustomer(customerid);
@@ -86,7 +98,20 @@ public class StaffService {
 	}
 	
 	
+public void saveCustomer(Customer customer) {
+		
+		
+		customerRepo.save(customer);
+	}
+public void saveTransaction(Transaction transaction) {
 	
+	// TODO Auto-generated method stub
+	transactionRepo.save(transaction);
+}
+public List<Transaction> getAllTransaction() {
+	// TODO Auto-generated method stub
+	return transactionRepo.findAll();
+}
 	
 	  
 	  

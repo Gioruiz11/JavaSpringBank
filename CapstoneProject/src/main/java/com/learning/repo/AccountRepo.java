@@ -18,6 +18,6 @@ public interface AccountRepo extends JpaRepository<Account, Long> {
 	public List<Account> FindAccountForApproval();
 	
 	@Query(value="Select * from account where account.accountStatus=0 and account.customer_id=:customerid",nativeQuery=true)
-	public List<Account> FindAccountForCustomer(@Param("customerid")int customerid );
+	public List<Account> FindAccountForCustomer(@Param("customerid")long customerid );
 
 }

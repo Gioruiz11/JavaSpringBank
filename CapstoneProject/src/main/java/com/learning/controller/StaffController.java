@@ -13,10 +13,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+
 import com.learning.entity.Account;
 import com.learning.entity.Beneficiary;
 import com.learning.entity.Customer;
+import com.learning.entity.Transaction;
 import com.learning.service.StaffService;
 
 @RestController
@@ -33,6 +34,13 @@ public class StaffController {
 		
 	}
 	
+	@GetMapping("/test")
+	public List<Transaction> getAllTransaction(){
+		return staffService.getAllTransaction();
+		
+		
+		
+	}
 	
 	@GetMapping("/beneficiary/approval")
 	public List<Beneficiary> getBeneficiaryforApproval() {
@@ -92,9 +100,23 @@ public class StaffController {
 		
 	}
 	@PutMapping("/customer")
-	public void approveEnableCustomer() {
-		
-		
+	public ResponseEntity<Customer> approveEnableCustomer(@RequestBody long customerid) {
+		Customer customer= new Customer();
+		customer=staffService.getcustomerByid(customerid);
+		if (customer.isStatus()==true) {
+			customer.setStatus(false);
+			staffService.saveCustomer(customer);
+			return ResponseEntity.ok(customer);
+			
+		}
+		else if(customer.isStatus()==false) {
+			customer.setStatus(true);
+			staffService.saveCustomer(customer);
+			return ResponseEntity.ok(customer);
+			
+			
+		}
+		return ResponseEntity.ok(customer);
 		
 		
 	}
@@ -106,9 +128,42 @@ public class StaffController {
 		
 	}
 	@PutMapping("/transfer")
-	public void Transfer() {
+	public ResponseEntity<Transaction> Transfer(@RequestBody Transaction transactionDetails) {
+		
+		Transaction transaction= new Transaction();
+		Account account1= new Account();
+		Account account2= new Account();
+		transaction=transactionDetails;
+		staffService.saveTransaction(transaction);
+		double money=transaction.getAmount();
+	  
+		account1=staffService.getaccountByid(transaction.getFromAccountNo());
+		
+		account2=staffService.getaccountByid(transaction.getToAccountNo());
 		
 		
+		if(transaction.isTransactionType()==false) {
+			
+			account1.setAccountBalance(account1.getAccountBalance()-money);
+			account2.setAccountBalance(account2.getAccountBalance()+money);
+			staffService.saveAccount(account2);
+			staffService.saveAccount(account1);
+			return ResponseEntity.ok(transaction);
+			
+		}
+		else if(transaction.isTransactionType()==true) {
+			
+			account1.setAccountBalance(account1.getAccountBalance()+money);
+			account2.setAccountBalance(account2.getAccountBalance()-money);
+			
+			
+			staffService.saveAccount(account2);
+			staffService.saveAccount(account1);
+			return ResponseEntity.ok(transaction);
+			
+		}
+		
+		return ResponseEntity.ok(transaction);
 		
 		
 	}

@@ -18,5 +18,5 @@ public interface BeneficiaryRepo extends JpaRepository<Beneficiary, Long> {
 
 	
 	@Query(value="Select * from beneficiary where beneficiary.isApproved=0 and beneficiary.customer_id=:customerid",nativeQuery=true)
-	public List<Beneficiary> FindBenficiaryForCustomer(@Param("customerid")int customerid );
+	public List<Beneficiary> FindBenficiaryForCustomer(@Param("customerid")long customerid );
 }
