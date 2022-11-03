@@ -15,51 +15,45 @@ import org.springframework.web.bind.annotation.RestController;
 import com.learning.entity.Staff;
 import com.learning.repo.CustomerRepo;
 import com.learning.repo.StaffRepo;
+import com.learning.service.ApproverService;
 
 @RestController
 @RequestMapping("/api/admin")
 public class ApproverController {
 	@Autowired
-	CustomerRepo customerRepo;
-	@Autowired
-	StaffRepo staffRepo;
+	ApproverService approverService;
 	@PostMapping("/staff")
 	public Staff createStaff(@RequestBody Staff staff){
-		 Staff s = new Staff();
-		 s.setStaffId(staff.getStaffId());
-		 s.setStaffFullName(staff.getStaffFullName() );
-		 s.setStaffUserName(staff.getStaffUserName());
-		 s.setStatus(staff.isStatus());	 		 
-		return staffRepo.save(staff);
-		
+		Staff s = new Staff();
+		s.setStaffId(staff.getStaffId());
+		s.setStaffFullName(staff.getStaffFullName() );
+		s.setStaffUserName(staff.getStaffUserName());
+		s.setStatus(staff.isStatus());	 		 
+		return approverService.createStaff(staff);
+
 	}
-	
+
 	@GetMapping("/staff")
 	public List<Staff> getAllStaff() {
-		return staffRepo.findAll();
-		
+		return approverService.getAllStaff();
+
 	}
-	
-	
-	
+
+
 	@PutMapping("/staff")
 	public boolean enableStaff() {
-		Staff s = new Staff();
-		if(s.isStatus()==false)
-		return false;
-			
-		return true;
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	
-}
+		return approverService.enableStaff();
+
+
+
+
+
+
+
+
+
+
+
+
+	}
 }
