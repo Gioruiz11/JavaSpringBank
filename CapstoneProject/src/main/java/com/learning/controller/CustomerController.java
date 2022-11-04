@@ -106,20 +106,35 @@ public class CustomerController {
 		return beneficiaryRepo.save(beneficiary);
 	}
 
-	
+	// works
 	@GetMapping("/{customerId}/getbeneficiary")
-	public Beneficiary getBeneficiaryByCustomerId(@RequestBody Beneficiary beneficiary, @PathVariable Long customerId) {
-		return beneficiary.getCustomer(getCustomerByCustomerId(customerId));
+	public List<Beneficiary> getBeneficiaryByCustomerId(@RequestBody Beneficiary beneficiary, @PathVariable Long customerId) {
+		List<Beneficiary> returnList = new ArrayList<>();
+		List<Beneficiary> temp = new ArrayList<>();
+		temp = beneficiaryRepo.findAll();
+		for(Beneficiary b : temp) {
+			if(b.getCustomer().getCustomerId() == customerId) {
+				returnList.add(b);
+			}
+		}
+		return returnList;
 	}
 
+	// works
 	@DeleteMapping("/{customerId}/beneficiary/{beneficiaryId}")
-	public void deleteBeneficiary() {
-
+	public void deleteBeneficiary(@PathVariable long beneficiaryId) {
+		List<Beneficiary> list = new ArrayList<>();
+		list = beneficiaryRepo.findAll();
+		for(Beneficiary b : list) {
+			if(b.getBeneficiaryId() == beneficiaryId) {
+				beneficiaryRepo.delete(b);
+			}
+		}
 	}
 
-	@PutMapping("/transfer")
+	@PutMapping("/customertransfer")
 	public void transferAccount() {
-
+		
 	}
 
 }
