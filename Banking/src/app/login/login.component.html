@@ -1,0 +1,20 @@
+<div id="home">
+    <img src="/assets/images/bank-getty.jpg" />
+    <h1>Your Personal Banking Partner</h1>
+</div>
+<div id="login">
+    <h1>Login</h1>
+    <form [formGroup]="profileForm" (ngSubmit)="login()">
+        <label for="userName">Username:</label>
+        <input type="text" name="username" required formControlName="username" />
+        <br />
+        <label for="password">Password:</label>
+        <input type="text" name="password" required formControlName="password"/>
+        <br />
+        <a href="/forgotpassword">Forgot Password</a>
+        <button type="submit">Login</button>
+        <h3>{{ack}}</h3>
+    </form>
+    <br />
+    <h3>Not A Customer <a href="/register">Register Here</a> </h3>
+</div>

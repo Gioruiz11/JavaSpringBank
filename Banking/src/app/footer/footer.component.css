@@ -1,0 +1,15 @@
+.footer {
+    position: fixed;
+    left: 5%;
+    right: 5%;
+    bottom: -2%;
+    width: 90%;
+    height: 3.5%;
+    text-align: center;
+    border: 1px solid black;
+}
+
+p {
+    padding-top: 1%;
+    font-size: 16pt;
+}
