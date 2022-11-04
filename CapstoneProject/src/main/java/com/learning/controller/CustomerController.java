@@ -34,20 +34,17 @@ public class CustomerController {
 	@Autowired
 	BeneficiaryRepo beneficiaryRepo;
 
-	// works perfectly
 	@PostMapping("/register")
 	public Customer registerCustomer(@RequestBody Customer customer) {
 		return customerRepo.save(customer);
 	}
 
-	// works perfectly
 	@PostMapping("/{customerId}/postaccount")
 	public Account createAccount(@RequestBody Account account, @PathVariable Long customerId) {
 		account.setCustomer(getCustomerByCustomerId(customerId));
 		return accountRepo.save(account);
 	}
 	
-	// works perfectly
 	@GetMapping("/{customerId}/getaccount")
 	public List<Account> getAccountByCustomerId(@PathVariable Long customerId) {
 		List<Account> list = new ArrayList<>();
@@ -61,7 +58,6 @@ public class CustomerController {
 		return list;
 	}
 
-	// works perfectly
 	@GetMapping("/{customerId}")
 	public Customer getCustomerByCustomerId(@PathVariable Long customerId) {
 		// changes retrieved customer from Optional type to Customer type
@@ -70,12 +66,8 @@ public class CustomerController {
 		return customer;
 	}
 
-	// Jean's Methods ^
 
-	// Gio's Methods v
-	// -------------------------------------------------------------------------------------------
 
-	// works
 	@PutMapping("/{customerId}")
 	public Customer updateCustomer(@RequestBody Customer updatedCustomer, @PathVariable Long customerId) {
 		Customer currentCustomer = getCustomerByCustomerId(customerId);
@@ -93,20 +85,17 @@ public class CustomerController {
 		return customerRepo.save(currentCustomer);
 	}
 
-	// works, mb
 	@GetMapping("/{customerId}/account/{accountNumber}")
 	public Optional<Account> getCustomerWithAccountId(@PathVariable Long accountNumber) {
 		return accountRepo.findById(accountNumber);
 	}
 
-	// works
 	@PostMapping("/{customerId}/beneficiary")
 	public Beneficiary addBeneficiary(@RequestBody Beneficiary beneficiary, @PathVariable Long customerId) {
 		beneficiary.setCustomer(getCustomerByCustomerId(customerId));
 		return beneficiaryRepo.save(beneficiary);
 	}
 
-	// works
 	@GetMapping("/{customerId}/getbeneficiary")
 	public List<Beneficiary> getBeneficiaryByCustomerId(@RequestBody Beneficiary beneficiary, @PathVariable Long customerId) {
 		List<Beneficiary> returnList = new ArrayList<>();
@@ -120,7 +109,6 @@ public class CustomerController {
 		return returnList;
 	}
 
-	// works
 	@DeleteMapping("/{customerId}/beneficiary/{beneficiaryId}")
 	public void deleteBeneficiary(@PathVariable long beneficiaryId) {
 		List<Beneficiary> list = new ArrayList<>();
