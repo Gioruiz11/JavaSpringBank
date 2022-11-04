@@ -132,9 +132,10 @@ public class CustomerController {
 		}
 	}
 
-	@PutMapping("/customertransfer")
-	public void transferAccount() {
-		
-	}
+	// this is done in staffController??
+	//@PutMapping("/transfer")
+	//public void transferAccount() {
+
+	//}
 
 }
