@@ -45,8 +45,7 @@ public class StaffService {
 	  }
 	  public List<Account> getAccountforApproval(){
 		  return accountRepo.FindAccountForApproval();
-		  
-		  
+		  	  
 	  }
 	  
 	  public List<Customer> getAllCustomers(){

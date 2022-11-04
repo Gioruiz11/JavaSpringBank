@@ -5,7 +5,9 @@ import java.util.List;
 import javax.persistence.EntityExistsException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,11 +26,7 @@ public class ApproverController {
 	ApproverService approverService;
 	@PostMapping("/staff")
 	public Staff createStaff(@RequestBody Staff staff){
-		Staff s = new Staff();
-		s.setStaffId(staff.getStaffId());
-		s.setStaffFullName(staff.getStaffFullName() );
-		s.setStaffUserName(staff.getStaffUserName());
-		s.setStatus(staff.isStatus());	 		 
+		 		 
 		return approverService.createStaff(staff);
 
 	}
@@ -41,17 +39,9 @@ public class ApproverController {
 
 
 	@PutMapping("/staff")
-	public boolean enableStaff() {
-		return approverService.enableStaff();
-
-
-
-
-
-
-
-
-
+	public ResponseEntity<Staff> enableStaff(@PathVariable("staffId") long staffId,@RequestBody Staff staffDetails)
+	{
+		return approverService.enableStaff(staffId,staffDetails);
 
 
 

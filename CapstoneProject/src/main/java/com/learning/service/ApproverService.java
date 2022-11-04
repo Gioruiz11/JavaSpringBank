@@ -3,12 +3,15 @@ package com.learning.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.learning.entity.Staff;
 import com.learning.repo.CustomerRepo;
 import com.learning.repo.StaffRepo;
-
+@Service
 public class ApproverService {
 
 
@@ -32,11 +35,22 @@ public class ApproverService {
 
 	}
 
-	public boolean enableStaff() {
-		Staff s = new Staff();
-		if(s.isStatus()==false)
-			return false;
+	
+	
+	public ResponseEntity<Staff> enableStaff(@PathVariable("staffId") long staffId,@RequestBody Staff staffDetails) {
+        Staff enableStaff = staffRepo.findById(staffId)
+                .orElseThrow(() -> new RuntimeException("Staff Does not exist with id: " + staffId));
 
-		return true;}
+        enableStaff.setStaffId(staffDetails.getStaffId());
+		enableStaff.setStaffFullName(staffDetails.getStaffFullName() );
+		enableStaff.setStaffUserName(staffDetails.getStaffUserName());
+		enableStaff.setStatus(staffDetails.isStatus());
 
-}
+        staffRepo.save(enableStaff);
+
+        return ResponseEntity.ok(enableStaff);
+    }
+	
+	}
+	
+
