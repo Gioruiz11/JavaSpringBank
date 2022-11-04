@@ -1,37 +1,56 @@
 package com.learning.entity;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import org.springframework.beans.factory.annotation.Value;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name="account")
 public class Account {
-	private String accountType;
-	private long customerId;
-	private double accountBalance;
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(nullable = false)
 	private long accountNumber;
-	private Date dateOfCreation;
+	@JsonFormat(pattern = "yyyy-MM-dd")
+	private LocalDate dateOfCreation;
 	private boolean accountStatus;
+	@Value("no")
+	private String approveAccount;
+	private String accountType;
+	private double accountBalance;
+	
+	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+	@JoinColumn(name = "customer_id", nullable = false)
+	@JsonIgnore
+	private Customer customer;
+	
+	
+	public String getApproveAccount() {
+		return approveAccount;
+	}
+	public void setApproveAccount(String approveAccount) {
+		this.approveAccount = approveAccount;
+	}
 	public String getAccountType() {
 		return accountType;
 	}
 	public void setAccountType(String accountType) {
 		this.accountType = accountType;
-	}
-	public long getCustomerId() {
-		return customerId;
-	}
-	public void setCustomerId(long customerId) {
-		this.customerId = customerId;
 	}
 	public double getAccountBalance() {
 		return accountBalance;
@@ -45,10 +64,10 @@ public class Account {
 	public void setAccountNumber(long accountNumber) {
 		this.accountNumber = accountNumber;
 	}
-	public Date getDateOfCreation() {
+	public LocalDate getDateOfCreation() {
 		return dateOfCreation;
 	}
-	public void setDateOfCreation(Date dateOfCreation) {
+	public void setDateOfCreation(LocalDate dateOfCreation) {
 		this.dateOfCreation = dateOfCreation;
 	}
 	public boolean isAccountStatus() {
@@ -57,20 +76,26 @@ public class Account {
 	public void setAccountStatus(boolean accountStatus) {
 		this.accountStatus = accountStatus;
 	}
-	public Account(String accountType, long customerId, double accountBalance, long accountNumber, Date dateOfCreation,
-			boolean accountStatus) {
+	public Customer getCustomer() {
+		return customer;
+	}
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+	public Account(long accountNumber, LocalDate dateOfCreation, boolean accountStatus, String accountType, 
+			String approveAccount, double accountBalance, Customer customer) {
 		super();
-		this.accountType = accountType;
-		this.customerId = customerId;
-		this.accountBalance = accountBalance;
 		this.accountNumber = accountNumber;
 		this.dateOfCreation = dateOfCreation;
 		this.accountStatus = accountStatus;
+		this.accountType = accountType;
+		this.accountBalance = accountBalance;
+		this.customer = customer;
+		this.approveAccount = approveAccount;
 	}
 	public Account() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
-	
-	
+
+
 }
