@@ -14,10 +14,8 @@ import com.learning.entity.Staff;
 @Transactional
 @Repository
 public interface StaffRepo extends JpaRepository<Staff, Long> {
-	@Modifying
-	@Query(value="select distinct account.accountNumber,customer.fullName,account.accountBalance,transaction.amount,transaction.transactionType,transaction.reason from customer,account,transaction where :account.customer_id=transaction.fromAccountNo or :account.customer_id=transaction.toAccountNo;",nativeQuery=true)
-	public List<Object[]> AccountStatement(@Param("account.customer_id")int customerid );
 	
+
 	
 
 	

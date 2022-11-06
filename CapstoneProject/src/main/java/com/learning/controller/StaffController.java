@@ -27,7 +27,7 @@ public class StaffController {
 	@Autowired
 	StaffService staffService;
 	@GetMapping("/account/{accountNo}")
-	public List<Object[]> getAcctStatement(@PathVariable("accountNo") int accountNO) {
+	public List<Transaction> getAcctStatement(@PathVariable("accountNo") int accountNO) {
 		return staffService.getBalanceInfo(accountNO);
 		
 		

@@ -32,12 +32,11 @@ public class StaffService {
 	  @Autowired
 	  TransactionRepo transactionRepo;
 	  
-	  
-	  public List<Object[]> getBalanceInfo(int customerid){
+public List<Transaction> getBalanceInfo(int customerid){
 		  
 		  
 		  
-		  return staffRepo.AccountStatement(customerid);
+		  return transactionRepo.AccountStatement(customerid);
 	  }
 	  public List<Beneficiary> getBeneficaryforApproval(){
 		  
