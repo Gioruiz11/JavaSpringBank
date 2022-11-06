@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.learning.entity.Account;
 import com.learning.entity.Beneficiary;
 import com.learning.entity.Customer;
+import com.learning.entity.Staff;
 import com.learning.entity.Transaction;
 import com.learning.service.StaffService;
 
@@ -32,6 +33,12 @@ public class StaffController {
 	public List<Transaction> getAcctStatement(@PathVariable("accountNo") int accountNO) {
 		return staffService.getBalanceInfo(accountNO);
 		
+		
+		
+	}
+	@GetMapping("/getstaff")
+	public List<Staff>getStaff(){
+		return staffService.allStaff();
 		
 		
 	}

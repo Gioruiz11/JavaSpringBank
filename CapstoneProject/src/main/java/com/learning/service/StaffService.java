@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.learning.entity.Staff;
 import com.learning.entity.Account;
 import com.learning.entity.Beneficiary;
 import com.learning.entity.Customer;
@@ -110,6 +111,10 @@ public void saveTransaction(Transaction transaction) {
 public List<Transaction> getAllTransaction() {
 	// TODO Auto-generated method stub
 	return transactionRepo.findAll();
+}
+public List<Staff> allStaff() {
+	// TODO Auto-generated method stub
+	return staffRepo.findAll();
 }
 	
 	  
