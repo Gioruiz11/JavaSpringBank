@@ -10,6 +10,13 @@ import { HomeComponent } from './home/home.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StaffloginComponent } from './stafflogin/stafflogin.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { UpdatepasswordComponent } from './updatepassword/updatepassword.component';
+import { CustomerComponent } from './customer/customer.component';
+import { StaffComponent } from './staff/staff.component';
+import { AdminComponent } from './admin/admin.component';
+import { CreatestaffComponent } from './createstaff/createstaff.component';
+import { ViewstaffComponent } from './viewstaff/viewstaff.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +26,14 @@ import { StaffloginComponent } from './stafflogin/stafflogin.component';
     LoginComponent,
     HomeComponent,
     RegistrationComponent,
-    StaffloginComponent
+    StaffloginComponent,
+    ForgotpasswordComponent,
+    UpdatepasswordComponent,
+    CustomerComponent,
+    StaffComponent,
+    AdminComponent,
+    CreatestaffComponent,
+    ViewstaffComponent
   ],
   imports: [
     BrowserModule,
