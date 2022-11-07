@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Staff } from '../staff';
@@ -14,11 +14,13 @@ export class StaffloginComponent implements OnInit {
   user : Staff= new Staff();
   users: any;
   ack:any;
-
+ 
+ 
+  
   constructor(private signupService:StaffService, private router: Router) { }
 
   ngOnInit(): void {
-
+    
   }
 
   profileForm = new FormGroup({
@@ -39,8 +41,14 @@ export class StaffloginComponent implements OnInit {
         for(let i=0; i<data.length; i++){
           console.log(this.users)
           console.log(this.user)
-          if(this.user.username == this.users[i].username && this.user.password == this.users[i].password){
+          console.log(this.users[i].staffUserName)
+          console.log(this.user.username)
+          if(this.user.username == this.users[i].staffUserName && this.user.password == this.users[i].staffPassword
+            ){
             this.ack = "Login successful";
+            sessionStorage.setItem("username",this.user.username);
+            
+            this.router.navigate(['/staffheader']);
           }
         }
       },error=>console.log(error));

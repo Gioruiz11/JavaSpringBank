@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { StaffheaderComponent } from './staffheader/staffheader.component';
 import { StaffloginComponent } from './stafflogin/stafflogin.component';
 
 const routes: Routes = [{ path: '', component: LoginComponent },
 { path: 'staff', component: StaffloginComponent },
 { path: 'register', component: RegistrationComponent },
+{path:'staffheader',component: StaffheaderComponent}
 //{ path: 'forgotpassword', component: HomeComponent }
 ];
 
