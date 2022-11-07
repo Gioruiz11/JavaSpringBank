@@ -1,0 +1,15 @@
+<div class="jumbotron text-center"> 
+    <div id="login">
+        <h1>Staff Login</h1>
+        <form [formGroup]="profileForm" (ngSubmit)="login()">
+            <label for="userName">Username:</label>
+            <input type="text" name="username" required formControlName="username" />
+            <br />
+            <label for="password">Password:</label>
+            <input type="text" name="password" required formControlName="password"/>
+            <br />
+            <button type="submit">Login</button>
+            <h3>{{ack}}</h3>
+        </form>
+    </div>
+</div>
