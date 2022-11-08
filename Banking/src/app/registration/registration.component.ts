@@ -39,18 +39,18 @@ export class RegistrationComponent implements OnInit {
     //console.log('Name:' + this.somedata.name);
     //console.log('Series:' + this.somedata.series);
 
-    this.user.fullname=this.f['fullName'].value;         //Angular
-    this.user.username=this.f['userName'].value;
+    this.user.fullName=this.f['fullName'].value;         //Angular
+    this.user.userName=this.f['userName'].value;
     this.user.password=this.f['password'].value;
     this.user.ssn=this.f['ssn'].value;
     this.user.phone=this.f['phone'].value;
-    this.user.secretquestion=this.f['secretQuestion'].value;
-    this.user.secretanswer=this.f['secretAnswer'].value;
+    this.user.secretQuestion=this.f['secretQuestion'].value;
+    this.user.secretAnswer=this.f['secretAnswer'].value;
     this.user.status = true;
 
     console.log(this.profileForm.value)
     //Post Operationwill be executed here
-    if(this.user.username!='' && this.user.password!=null){
+    if(this.user.userName!='' && this.user.password!=null){
     this.addUser();
     }
     //this.signupService.createuserlist(this.user)

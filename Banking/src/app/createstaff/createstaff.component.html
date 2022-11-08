@@ -1,0 +1,20 @@
+<app-admin></app-admin>
+<form [formGroup]="profileForm" (ngSubmit)="submit()">
+    <!-- <form action="action_page.php" method="post"> -->
+    <div class="imgcontainer">
+
+    </div>
+    <div class="jumbotron text-center">
+        <div class="container">
+            <h4>
+                <input type="text" placeholder="Enter staff name" name="fullname" required formControlName="fullName">
+                <br>
+                <input type="text" placeholder="Enter staff username" name="username" formControlName="userName">
+                <br>
+                <input type="text" placeholder="Enter password" name="password" required formControlName="password">
+                <br>
+                <button type="submit">Create</button><br>
+            </h4>
+        </div>
+    </div>
+</form>
