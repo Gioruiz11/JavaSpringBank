@@ -7,6 +7,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { SearchcustomerComponent } from './searchcustomer/searchcustomer.component';
 import { StaffheaderComponent } from './staffheader/staffheader.component';
 import { StaffloginComponent } from './stafflogin/stafflogin.component';
+import { TransactionservicesComponent } from './transactionservices/transactionservices.component';
 
 const routes: Routes = [{ path: '', component: LoginComponent },
 { path: 'staff', component: StaffloginComponent },
@@ -14,7 +15,8 @@ const routes: Routes = [{ path: '', component: LoginComponent },
 {path:'staffheader',component: StaffheaderComponent},
 {path:'customersearch',component:SearchcustomerComponent},
 {path:'beneficiaryenable',component:BeneficiaryservicesComponent},
-{path:'accountenable',component:AccountservicesComponent}
+{path:'accountenable',component:AccountservicesComponent},
+{path:'transfer',component:TransactionservicesComponent}
 //{ path: 'forgotpassword', component: HomeComponent }
 ];
 
