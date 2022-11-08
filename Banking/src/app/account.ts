@@ -1,6 +1,5 @@
 export class Account {
-
-    accountNumber:any
+	accountNumber:any
 	dateOfCreation:any
 	accountStatus:any
 	accountType:any

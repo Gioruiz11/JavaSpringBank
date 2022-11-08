@@ -16,4 +16,12 @@ export class AccountService {
     return this.http.get(`${this.baseUrl}` + '/api/staff/account/approval');  //will change
 
   }
+  changeuserStatus(id:any){
+    console.log(id)
+    return this.http.put(`${this.baseUrl}` + '/api/staff/account/change/status',id,{responseType: 'text'}); 
+
+
+
+
+  }
 }

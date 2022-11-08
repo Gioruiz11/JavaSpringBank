@@ -14,6 +14,8 @@ import { StaffheaderComponent } from './staffheader/staffheader.component';
 
 import { SearchcustomerComponent } from './searchcustomer/searchcustomer.component';
 import { BeneficiaryservicesComponent } from './beneficiaryservices/beneficiaryservices.component';
+import { AccountservicesComponent } from './accountservices/accountservices.component';
+import { TransactionservicesComponent } from './transactionservices/transactionservices.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { BeneficiaryservicesComponent } from './beneficiaryservices/beneficiarys
     StaffheaderComponent,
  
     SearchcustomerComponent,
-    BeneficiaryservicesComponent
+    BeneficiaryservicesComponent,
+    AccountservicesComponent,
+    TransactionservicesComponent
   ],
   imports: [
     BrowserModule,

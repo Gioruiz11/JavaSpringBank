@@ -1,9 +1,28 @@
-<table>
-    <tr *ngFor="let user of users">
-      <td>{{user.beneficiaryName}}</td>
-      <td>{{user.beneficiaryId}}</td>
-      <td>{{user.beneficiaryAccountNo}}</td>
-      <td>{{user.active}}</td>
-      <td>{{user.approved}}</td>
+
+<button (click)="BenficiaryEnable()">Click me</button>
+
+
+
+  <table class="table " *ngIf= "users" then> 
+    <tr>
+        <th scope="col">#</th>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Account Number</th>
+        <th>Active</th>
+        <th>Approved</th>
+
+
+
     </tr>
-  </table>
+    <tr *ngFor="let user of users">
+        <th scope="row">#</th>
+        <td>{{user.beneficiaryId}}</td>
+        <td>{{user.beneficiaryName}}</td>
+        <td>{{user.beneficiaryAccountNo}}</td>
+        <td>{{user.active}}</td>
+        <td>{{user.approved}}</td>
+        <td> <button class="btn btn-danger btn-rounded" (click)="changeuserStatus(user.beneficiaryId)">Change Status</button></td> 
+        
+       
+    </tr>

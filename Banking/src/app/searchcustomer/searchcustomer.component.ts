@@ -16,6 +16,9 @@ export class SearchcustomerComponent implements OnInit {
   constructor(private signupService:CustomerService, private router: Router) { }
 
   ngOnInit(): void {
+    this.AllCustomers()
+
+
   }
   SearchForm = new FormGroup({
     
@@ -26,10 +29,10 @@ export class SearchcustomerComponent implements OnInit {
       this.signupService.getuserList().subscribe(data=>{this.users=data;
         
         for(let i=0; i<data.length; i++){
-    
+          
           if(id==this.users[i].customerId){
-            
-            
+              this.user=this.users[i]
+                
           
   
           }
@@ -43,5 +46,20 @@ export class SearchcustomerComponent implements OnInit {
 
 
   }
+
+  AllCustomers(){
+      
+    this.signupService.getuserList().subscribe(data=>{this.users=data;
+      
+     
+      
+    },error=>console.log(error));
+
+
+  
+
+
+}
+
 
 }

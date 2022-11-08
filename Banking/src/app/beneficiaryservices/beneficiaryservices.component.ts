@@ -11,15 +11,18 @@ import { BeneficiaryService } from '../beneficiary.service';
 export class BeneficiaryservicesComponent implements OnInit {
 user:Beneficiary=new Beneficiary();
 users: any;
-  
+
 constructor(private signupService:BeneficiaryService, private router: Router) { }
 
 ngOnInit(): void {
 }
 
 BenficiaryEnable(){
-    
+  
   this.signupService.getuserList().subscribe(data=>{this.users=data;
+    for(let i=0; i<data.length; i++){
+      console.log(this.users)}
+   
     
   },error=>console.log(error));
 
@@ -27,5 +30,20 @@ BenficiaryEnable(){
 
 
 }
+changeuserStatus(id:any){
+ 
+  this.signupService.changeuserStatus(id)
+    .subscribe(
+      (      data: any) => {
+        console.log(data);
+        
+        this.signupService.getuserList().subscribe(data =>{
+          this.users =data
+          })
+      },
+      (      error: any) => console.log(error));
 
+
+
+}
 }
