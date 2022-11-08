@@ -99,6 +99,21 @@ public class StaffController {
 		return staffService.getAccountforApproval();
 		
 	}
+	@PutMapping("/account/change/status")
+	public ResponseEntity<Account> changeStatusAccount(@RequestBody long accountId){
+		 Account acc=new Account();
+		acc=staffService.getaccountByid(accountId);
+		if(acc.isAccountStatus()==true) {
+			acc.setAccountStatus(false);
+			staffService.saveAccount(acc);
+			
+		}
+		else if(acc.isAccountStatus()==false) {
+			acc.setAccountStatus(true);
+			staffService.saveAccount(acc);
+			
+		}
+		return ResponseEntity.ok(acc);
 	
 	@PutMapping("/account/approve")
 	public ResponseEntity<List<Account>> approveAccts(@RequestBody int customerid) {
