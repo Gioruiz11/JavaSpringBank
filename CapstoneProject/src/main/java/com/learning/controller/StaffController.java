@@ -75,6 +75,25 @@ public class StaffController {
 		 return ResponseEntity.ok(listBen2);
 	}
 	
+	@PutMapping("/beneficiary/change/status")
+	public ResponseEntity<Beneficiary> changeStatus(@RequestBody int beneficiaryId){
+		Beneficiary Ben = new Beneficiary();
+		Ben=staffService.getBeneficaryByBenId(beneficiaryId);
+		if(Ben.isApproved()==true) {
+			Ben.setApproved(false);
+			staffService.saveBeneficiary(Ben);
+			
+		}
+		else if(Ben.isApproved()==false) {
+			Ben.setApproved(true);
+			staffService.saveBeneficiary(Ben);
+			
+		}
+		return ResponseEntity.ok(Ben);
+		
+		
+	}
+	
 	@GetMapping("/account/approval")
 	public List<Account> getAcctApprove() {
 		return staffService.getAccountforApproval();
