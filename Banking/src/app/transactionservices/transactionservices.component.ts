@@ -45,10 +45,7 @@ export class TransactionservicesComponent implements OnInit {
       this.user.transactionType=this.f['transactionType'].value;
       this.date=this.now.getUTCFullYear() + '-' +
       ('00' + (this.now.getUTCMonth()+1)).slice(-2) + '-' +
-      ('00' + this.now.getUTCDate()).slice(-2) + ' ' + 
-      ('00' + this.now.getUTCHours()).slice(-2) + ':' + 
-      ('00' + this.now.getUTCMinutes()).slice(-2) + ':' + 
-      ('00' + this.now.getUTCSeconds()).slice(-2);
+      ('00' + this.now.getUTCDate()).slice(-2);
       this.user.date=this.date;
       this.createTransaction()
     

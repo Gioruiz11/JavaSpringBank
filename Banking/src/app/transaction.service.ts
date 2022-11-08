@@ -19,7 +19,7 @@ export class TransactionService {
 
   createTransaction(user:object){
     console.log(user)
-    return this.http.put(`${this.baseUrl}` + '/api/staff/transfer',user,{responseType: 'text'}); 
+    return this.http.put(`${this.baseUrl}` + '/api/staff/transfer',user); 
 
 
 
