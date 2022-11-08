@@ -48,7 +48,7 @@ export class StaffloginComponent implements OnInit {
             this.ack = "Login successful";
             sessionStorage.setItem("username",this.user.username);
             
-            this.router.navigate(['/staffheader']);
+            this.router.navigate(['/beneficiaryenable']);
           }
         }
       },error=>console.log(error));

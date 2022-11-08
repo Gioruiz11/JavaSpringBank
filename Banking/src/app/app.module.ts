@@ -11,8 +11,9 @@ import { RegistrationComponent } from './registration/registration.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StaffloginComponent } from './stafflogin/stafflogin.component';
 import { StaffheaderComponent } from './staffheader/staffheader.component';
-import { BeneficiaryComponent } from './beneficiary/beneficiary.component';
+
 import { SearchcustomerComponent } from './searchcustomer/searchcustomer.component';
+import { BeneficiaryservicesComponent } from './beneficiaryservices/beneficiaryservices.component';
 
 @NgModule({
   declarations: [
@@ -24,8 +25,9 @@ import { SearchcustomerComponent } from './searchcustomer/searchcustomer.compone
     RegistrationComponent,
     StaffloginComponent,
     StaffheaderComponent,
-    BeneficiaryComponent,
-    SearchcustomerComponent
+ 
+    SearchcustomerComponent,
+    BeneficiaryservicesComponent
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,16 @@
-<p>searchcustomer works!</p>
+
+<div id="search customer">
+    <h1>Search Customer by ID</h1>
+   
+    <form [formGroup]="SearchForm"  (ngSubmit)="searchbyId(customerid.value)">
+        <label for="customer Id">ID</label>
+        <input type="number" id="customerid" #customerid name="customerid" required formControlName="id" />
+        <br />
+        <button type="submit">Search</button>
+        
+       
+    </form>
+
+</div>
+
+
