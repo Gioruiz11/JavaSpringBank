@@ -1,11 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Staff } from './staff';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StaffService {
+
+  s : Staff = new Staff();
 
   private baseUrl = 'http://localhost:8080';
 
@@ -20,5 +23,13 @@ export class StaffService {
   createuserlist(user: object): Observable<object> {
     console.log("success");
     return this.http.post(`${this.baseUrl}` + '/api/admin/staff', user);
+  }
+
+  getter() {
+    return this.s;
+  }
+
+  setter(staff: Staff){
+    this.s = staff;
   }
 }

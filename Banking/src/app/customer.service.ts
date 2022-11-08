@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Customer } from './customer';
@@ -10,6 +10,7 @@ export class CustomerService {
 
   private baseUrl = 'http://localhost:8080';
  
+  c: Customer = new Customer();
 
   constructor(private http:HttpClient) { }
 
@@ -33,6 +34,16 @@ export class CustomerService {
 
   putuserlist(user: Customer): Observable<object> {
     console.log("success");
-    return this.http.put(`${this.baseUrl}` + '/' + user.customerid, user);
+    this.c = new Customer();
+    return this.http.put(`${this.baseUrl}` + '/api/customer/' + `${user.customerId}`, user);
+  }
+
+
+  setter(user: Customer){
+      this.c = user;
+  }
+
+  getter(){
+      return this.c;
   }
 }

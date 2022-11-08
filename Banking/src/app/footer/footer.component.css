@@ -2,7 +2,7 @@
     position: fixed;
     left: 5%;
     right: 5%;
-    bottom: -2%;
+    bottom: 0%;
     width: 90%;
     height: 3.5%;
     text-align: center;
@@ -10,6 +10,5 @@
 }
 
 p {
-    padding-top: 1%;
     font-size: 16pt;
 }
