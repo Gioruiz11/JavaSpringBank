@@ -117,7 +117,11 @@ public List<Staff> allStaff() {
 	return staffRepo.findAll();
 }
 	
-	  
+public Beneficiary getBeneficaryByBenId(long beneficiaryId) {
+	// TODO Auto-generated method stub
+	return beneficiaryRepo.findById( beneficiaryId).get();
+}
+		  
 	  
 
 
