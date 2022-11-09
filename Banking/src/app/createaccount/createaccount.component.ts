@@ -58,7 +58,7 @@ export class CreateaccountComponent implements OnInit {
     
     console.log(this.profileForm.value)
     //Post Operationwill be executed here
-    if (this.user.customerId!=null){
+    if (this.user.customer_id!=null){
     this.addAccount();
     // this.ack = "Account Creation under process";
     // this.router.navigate(["/profile"]);

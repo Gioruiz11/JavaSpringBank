@@ -47,9 +47,8 @@ import { ViewstaffComponent } from './viewstaff/viewstaff.component';
     RemovebeneficiaryComponent,
     TransfermoneyComponent,
     ViewstatementComponent,
-    ProfileheaderComponent
+    ProfileheaderComponent,
     StaffheaderComponent,
- 
     SearchcustomerComponent,
     BeneficiaryservicesComponent,
     AccountservicesComponent,
