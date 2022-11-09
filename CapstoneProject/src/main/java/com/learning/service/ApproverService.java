@@ -37,19 +37,7 @@ public class ApproverService {
 
 	
 	
-	public ResponseEntity<Staff> enableStaff(@PathVariable("staffId") long staffId,@RequestBody Staff staffDetails) {
-        Staff enableStaff = staffRepo.findById(staffId)
-                .orElseThrow(() -> new RuntimeException("Staff Does not exist with id: " + staffId));
-
-        enableStaff.setStaffId(staffDetails.getStaffId());
-		enableStaff.setStaffFullName(staffDetails.getStaffFullName() );
-		enableStaff.setStaffUserName(staffDetails.getStaffUserName());
-		enableStaff.setStatus(staffDetails.isStatus());
-
-        staffRepo.save(enableStaff);
-
-        return ResponseEntity.ok(enableStaff);
-    }
+	
 	
 	}
 	

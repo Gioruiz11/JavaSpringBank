@@ -26,25 +26,39 @@ import com.learning.service.ApproverService;
 public class ApproverController {
 	@Autowired
 	ApproverService approverService;
-	@PostMapping("/staff")
+	@PostMapping("/addstaff")
 	public Staff createStaff(@RequestBody Staff staff){
 		 		 
 		return approverService.createStaff(staff);
 
 	}
 
-	@GetMapping("/staff")
+	@GetMapping("/getstaff")
 	public List<Staff> getAllStaff() {
 		return approverService.getAllStaff();
 
 	}
 
 
-	@PutMapping("/staff")
-	public ResponseEntity<Staff> enableStaff(@PathVariable("staffId") long staffId,@RequestBody Staff staffDetails)
+	@PutMapping("/enablestaff")
+	public ResponseEntity<Staff> enableStaff(@RequestBody long customerid)
 	{
-		return approverService.enableStaff(staffId,staffDetails);
-
+		Customer customer= new Customer();
+		customer=staffService.getcustomerByid(customerid);
+		if (customer.isStatus()==true) {
+			customer.setStatus(false);
+			staffService.saveCustomer(customer);
+			return ResponseEntity.ok(customer);
+			
+		}
+		else if(customer.isStatus()==false) {
+			customer.setStatus(true);
+			staffService.saveCustomer(customer);
+			return ResponseEntity.ok(customer);
+			
+			
+		}
+		return ResponseEntity.ok(customer);
 
 
 	}
