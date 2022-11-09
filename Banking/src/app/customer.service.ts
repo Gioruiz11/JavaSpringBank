@@ -23,10 +23,14 @@ export class CustomerService {
     console.log("success");
     return this.http.post(`${this.baseUrl}` + '/api/customer/register', user);
   }
-
+  createaccountlist(customerId: object): Observable<object> {
+    console.log("success");
+    return this.http.post(`${this.baseUrl}` + '/api/customer/' + `${customerId}` + '/account', customerId);
+  }
   getuserList(): Observable<any> {
 
     return this.http.get(`${this.baseUrl}` + '/api/customer/getcustomers');  //will change
+    // return this.http.get(`${this.baseUrl}` + '/api/customer/1'); 
 
   }
 }

@@ -10,6 +10,13 @@ import { HomeComponent } from './home/home.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StaffloginComponent } from './stafflogin/stafflogin.component';
+import { ProfileComponent } from './profile/profile.component';
+import { CreateaccountComponent } from './createaccount/createaccount.component';
+import { AddbeneficiaryComponent } from './addbeneficiary/addbeneficiary.component';
+import { RemovebeneficiaryComponent } from './removebeneficiary/removebeneficiary.component';
+import { TransfermoneyComponent } from './transfermoney/transfermoney.component';
+import { ViewstatementComponent } from './viewstatement/viewstatement.component';
+import { ProfileheaderComponent } from './profileheader/profileheader.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +26,14 @@ import { StaffloginComponent } from './stafflogin/stafflogin.component';
     LoginComponent,
     HomeComponent,
     RegistrationComponent,
-    StaffloginComponent
+    StaffloginComponent,
+    ProfileComponent,
+    CreateaccountComponent,
+    AddbeneficiaryComponent,
+    RemovebeneficiaryComponent,
+    TransfermoneyComponent,
+    ViewstatementComponent,
+    ProfileheaderComponent
   ],
   imports: [
     BrowserModule,

@@ -1,11 +1,11 @@
 export class Customer {
-    customerid: any;
-    fullname:any;
-    username:any;
+    customerId: any;
+    fullName:any;
+    userName:any;
     password:any;
     phone:any;
     ssn:any;
-    secretquestion:any;
-    secretanswer:any;
+    secretQuestion:any;
+    secretAnswer:any;
     status: any;
 }
