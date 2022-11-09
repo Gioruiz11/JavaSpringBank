@@ -25,6 +25,10 @@ export class StaffService {
     return this.http.post(`${this.baseUrl}` + '/api/admin/staff', user);
   }
 
+  putuserList(id:any): Observable<object> {
+    return this.http.put(`${this.baseUrl}` + '/api/admin/enablestaff', id);
+  }
+
   getter() {
     return this.s;
   }

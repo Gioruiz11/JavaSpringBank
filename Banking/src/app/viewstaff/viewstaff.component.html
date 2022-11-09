@@ -14,9 +14,19 @@
     </tr>
     <tr *ngFor="let user of users">
         <th scope="row">#</th>
-        <td>{{ user.staffFullName }}</td>
+        <td>{{user.staffFullName }}</td>
         <td>{{user.staffUserName }}</td>
-        <td> <button class="btn btn-danger btn-rounded"> Enable</button></td>
-       
+        <td>
+        <label *ngIf= "user.status==true"class="switch">
+            <input type="checkbox" checked (click)="enable(user.staffId)">
+            <span class="slider"></span>
+          </label>
+
+           
+        <label *ngIf= "user.status!=true"class="switch">
+            <input type="checkbox" (click)="enable(user.staffId)">
+            <span class="slider"></span>
+          </label>
+        </td>
     </tr>
 </table>
