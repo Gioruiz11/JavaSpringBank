@@ -1,0 +1,32 @@
+<app-admin></app-admin>
+<br>
+<button class="btn btn-danger btn-rounded" (click)="readUser()"> Display Staff</button>
+<h1>List of Staff</h1>
+<table class="table ">
+    <tr>
+        <th scope="col">#</th>
+    <th>Staff Name</th>
+    <th>Staff User Name</th>
+    <th>Enable Disable</th>
+
+
+
+    </tr>
+    <tr *ngFor="let user of users">
+        <th scope="row">#</th>
+        <td>{{user.staffFullName }}</td>
+        <td>{{user.staffUserName }}</td>
+        <td>
+        <label *ngIf= "user.status==true"class="switch">
+            <input type="checkbox" checked (click)="enable(user.staffId)">
+            <span class="slider"></span>
+          </label>
+
+           
+        <label *ngIf= "user.status!=true"class="switch">
+            <input type="checkbox" (click)="enable(user.staffId)">
+            <span class="slider"></span>
+          </label>
+        </td>
+    </tr>
+</table>

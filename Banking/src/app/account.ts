@@ -1,10 +1,9 @@
 export class Account {
-    accountNumber: any;
-	dateOfCreation: any;
-	accountStatus: any;
-	approveAccount: any;
-	accountType: any;
-	accountBalance: any;
-    customerId: any;
-	// private Customer customer;
+
+	accountNumber:any
+	dateOfCreation:any
+	accountStatus:any
+	accountType:any
+	accountBalance:any
+	customer_id:any
 }

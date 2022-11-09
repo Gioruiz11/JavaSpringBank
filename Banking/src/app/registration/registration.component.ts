@@ -63,6 +63,7 @@ export class RegistrationComponent implements OnInit {
       console.log(data),(error: any)=>console.log(error));
     this.user = new Customer();
     this.router.navigate(["/profile"]);
+
   }
 
 }
