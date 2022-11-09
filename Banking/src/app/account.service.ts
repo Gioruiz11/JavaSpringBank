@@ -41,4 +41,10 @@ export class AccountService {
 
 
   }
+
+ getAccountName(id:any): Observable<any>{
+  return this.http.get(`${this.baseUrl}` + `api/staff/customer/search/${id}`)
+
+
+}
 }
