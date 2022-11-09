@@ -1,10 +1,7 @@
 <form [formGroup]="profileForm" (ngSubmit)="submit()">
-    <!-- <form action="action_page.php" method="post"> -->
-    <div class="imgcontainer">
-
-    </div>
     <div class="jumbotron text-center">
         <div class="container">
+            <h2>Register New User</h2>
             <h4>
                 <input type="text" placeholder="Enter fullname" name="fullName" required formControlName="fullName">
                 <br>
@@ -17,10 +14,11 @@
                 <input type="text" placeholder="Enter phone" name="phone" required formControlName="phone">
                 <br>
                 <select name="secretQuestion" id="question" required formControlName="secretQuestion">
-                    <option value="1">What is your mother's maiden name?</option>
-                    <option value="2">What is your 4th grade teacher name?</option>
-                    <option value="3">What is the name of your favorite pet?</option>
+                    <option [ngValue]=1>What is your mother's maiden name?</option>
+                    <option [ngValue]=2>What is your 4th grade teacher name?</option>
+                    <option [ngValue]=3>What is the name of your favorite pet?</option>
                 </select>
+                <br>
                 <input type="text" placeholder="Enter answer" name="secretAnswer" required formControlName="secretAnswer">
                 <br>
                 <button type="submit">Register</button><br>
@@ -28,3 +26,8 @@
         </div>
     </div>
 </form>
+
+<div class="jumbotron text-center">
+    <h1>Already have an account?</h1>
+    <a href="/">LOGIN HERE</a>
+</div>

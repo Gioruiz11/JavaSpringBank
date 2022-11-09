@@ -33,23 +33,27 @@ export class StaffloginComponent implements OnInit {
   }
   
   login() {
-    this.user.username = this.f['username'].value; 
-    this.user.password = this.f['password'].value;
+    this.user.staffUserName = this.f['username'].value; 
+    this.user.staffPassword = this.f['password'].value;
     
-    if(this.user.username!='' && this.user.password !=null){
+    if(this.user.staffUserName!='' && this.user.staffPassword !=null){
+
+      if(this.user.staffUserName == "admin@admin.com" && this.user.staffPassword == "secret@123"){
+        this.router.navigate(['/admin']);
+      }
+
       this.signupService.getuserList().subscribe(data=>{this.users=data;
         for(let i=0; i<data.length; i++){
           console.log(this.users)
           console.log(this.user)
-          console.log(this.users[i].staffUserName)
-          console.log(this.user.username)
-          if(this.user.username == this.users[i].staffUserName && this.user.password == this.users[i].staffPassword
-            ){
+
+          
+          if(this.user.staffUserName == this.users[i].staffUserName && this.user.staffPassword == this.users[i].staffPassword){
             this.ack = "Login successful";
-            sessionStorage.setItem("username",this.user.username);
-            
-            this.router.navigate(['/beneficiaryenable']);
+            this.signupService.setter(this.users[i]);
+            this.router.navigate(['/staff']);
           }
+          
         }
       },error=>console.log(error));
 
