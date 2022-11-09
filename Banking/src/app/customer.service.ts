@@ -32,6 +32,7 @@ export class CustomerService {
 
   }
 
+
   putuserlist(user: Customer): Observable<object> {
     console.log("success");
     this.c = new Customer();

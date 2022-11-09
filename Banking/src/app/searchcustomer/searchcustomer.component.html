@@ -1,0 +1,66 @@
+
+<div id="search customer">
+    <h1>Search Customer by ID</h1>
+   
+    <form [formGroup]="SearchForm"  (ngSubmit)="searchbyId(customerId.value)">
+        <label for="customer Id">ID</label>
+        <input type="number" id="customerid" #customerId name="customerid" required formControlName="id" />
+        <br />
+        <button type="submit">Search</button>
+        
+       
+    </form>
+   
+</div>
+
+
+<table class="table " *ngIf= "user.customerId!=null" then> 
+    <tr>
+        <th scope="col">#</th>
+        <th>Id</th>
+        <th>Name</th>
+        <th>User Name</th>
+        <th>Status</th>
+        
+
+
+
+    </tr>
+    <tr >
+        <th scope="row">#</th>
+           
+    <td>{{user.customerId}}</td>
+    <td>{{user.fullName}}</td>
+    <td>{{user.userName}}</td>
+    <td>{{user.status}}</td>
+        
+       
+    </tr>
+</table>
+
+    <table class="table " *ngIf= "user.customerId==null" then> 
+        <tr>
+            <th scope="col">#</th>
+            <th>Id</th>
+            <th>Name</th>
+            <th>User Name</th>
+            <th>Status</th>
+    
+    
+    
+        </tr>
+        <tr *ngFor="let user of users">
+            <th scope="row">#</th>
+            <td>{{user.customerId}}</td>
+            <td>{{user.fullName}}</td>
+            <td>{{user.userName}}</td>
+            <td>{{user.status}}</td>
+            
+           
+        </tr>
+<!---<table  *ngIf= "!user" then>
+    
+    <a>User not Found</a>
+    
+</table>
+-->
