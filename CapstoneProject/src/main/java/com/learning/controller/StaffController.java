@@ -50,6 +50,13 @@ public class StaffController {
 		
 		
 	}
+	@GetMapping("/account")
+	public Account getAccountById(@RequestBody long accountid){
+		return staffService.getaccountByid(accountid);
+		
+		
+		
+	}
 	
 	@GetMapping("/beneficiary/approval")
 	public List<Beneficiary> getBeneficiaryforApproval() {
