@@ -121,6 +121,7 @@ public class StaffController {
 			
 		}
 		return ResponseEntity.ok(acc);
+	}
 	
 	@PutMapping("/account/approve")
 	public ResponseEntity<List<Account>> approveAccts(@RequestBody int customerid) {

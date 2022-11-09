@@ -26,9 +26,10 @@ import com.learning.service.ApproverService;
 public class ApproverController {
 	@Autowired
 	ApproverService approverService;
+
 	@PostMapping("/addstaff")
-	public Staff createStaff(@RequestBody Staff staff){
-		 		 
+	public Staff createStaff(@RequestBody Staff staff) {
+
 		return approverService.createStaff(staff);
 
 	}
@@ -39,27 +40,23 @@ public class ApproverController {
 
 	}
 
-
 	@PutMapping("/enablestaff")
-	public ResponseEntity<Staff> enableStaff(@RequestBody long customerid)
-	{
-		Customer customer= new Customer();
-		customer=staffService.getcustomerByid(customerid);
-		if (customer.isStatus()==true) {
-			customer.setStatus(false);
-			staffService.saveCustomer(customer);
-			return ResponseEntity.ok(customer);
-			
-		}
-		else if(customer.isStatus()==false) {
-			customer.setStatus(true);
-			staffService.saveCustomer(customer);
-			return ResponseEntity.ok(customer);
-			
-			
-		}
-		return ResponseEntity.ok(customer);
+	public ResponseEntity<Staff> enableStaff(@RequestBody long staffId) {
+		Staff staff = new Staff();
+		staff = approverService.getstaffByid(staffId);
+		if (staff.isStatus() == true) {
+			staff.setStatus(false);
+			approverService.saveStaff(staff);
+			return ResponseEntity.ok(staff);
 
+		} else if (staff.isStatus() == false) {
+			staff.setStatus(true);
+			approverService.saveStaff(staff);
+			return ResponseEntity.ok(staff);
+
+		}
+		return ResponseEntity.ok(staff);
 
 	}
+
 }
