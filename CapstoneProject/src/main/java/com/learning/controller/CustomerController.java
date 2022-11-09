@@ -35,6 +35,10 @@ public class CustomerController {
 	public Customer registerCustomer(@RequestBody Customer customer) {
 		return customerRepo.save(customer);
 	}
+	@GetMapping("/getcustomers")
+	public List<Customer> getAllCustomer() {
+		return customerRepo.findAll();
+	}
 	@PostMapping("/{customerId}/account")
 	public Account createAccount(@PathVariable("customerId") long customerId, @RequestBody Account account) {
 		account.setCustomer(getCustomerByCustomerId(customerId));
