@@ -1,0 +1,47 @@
+<p>super-admin works!</p>
+<p>super-admin works!</p>
+
+<div class="container">
+    <h4>
+        <td> <button class="btn  btn-danger btn-rounded" (click)="goToAdmin1()">Create Staff</button> </td>
+        <td> <button class="btn btn-danger btn-rounded" (click)="readUser()">View Staff</button></td>
+
+    </h4>
+</div>
+
+<table class="table ">
+
+
+
+    <tr>
+        <p></p>
+        <th scope="col">#</th>
+        <th>staffFullName</th>
+        <th>UserName</th>
+
+        <th>Action</th>
+    </tr>
+
+
+
+    <tr *ngFor="let user of users">
+
+        <th scope="row">#</th>
+        <td>{{user.staffFullName}}</td>
+        <td>{{user.UserName }}</td>
+
+        <td>
+            <button (click)="isActive(true)" [disabled]="enabled">Enabled</button>
+        </td>
+
+        <td>
+            <button (click)="isActive(false)" [disabled]="disabled">Disabled</button>
+        </td>
+
+        <td> <button class="btn btn-danger btn-rounded" (click)="deleteUser(user.id)"> Enable User</button></td>
+
+        <p></p>
+    </tr>
+
+</table>
+<br>

@@ -32,4 +32,16 @@ export class StaffService {
   setter(staff: Staff){
     this.s = staff;
   }
+
+  //Sam's added funcntions
+
+  
+  
+  
+  deleteuserList(id: number): Observable<any> {
+  
+    return this.http.delete(`${this.baseUrl}` + `/api/admin/enableemployee/`+ `${id}`, {responseType: 'text'});  //will change
+  
+  }
+
 }
