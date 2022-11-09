@@ -10,6 +10,20 @@ import { HomeComponent } from './home/home.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StaffloginComponent } from './stafflogin/stafflogin.component';
+import { ProfileComponent } from './profile/profile.component';
+import { CreateaccountComponent } from './createaccount/createaccount.component';
+import { AddbeneficiaryComponent } from './addbeneficiary/addbeneficiary.component';
+import { RemovebeneficiaryComponent } from './removebeneficiary/removebeneficiary.component';
+import { TransfermoneyComponent } from './transfermoney/transfermoney.component';
+import { ViewstatementComponent } from './viewstatement/viewstatement.component';
+import { ProfileheaderComponent } from './profileheader/profileheader.component';
+import { StaffheaderComponent } from './staffheader/staffheader.component';
+import { SearchcustomerComponent } from './searchcustomer/searchcustomer.component';
+import { BeneficiaryservicesComponent } from './beneficiaryservices/beneficiaryservices.component';
+import { AccountservicesComponent } from './accountservices/accountservices.component';
+import { TransactionservicesComponent } from './transactionservices/transactionservices.component';
+import { CustomerenableComponent } from './customerenable/customerenable.component';
+import { AccounttransactionsComponent } from './accounttransactions/accounttransactions.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { UpdatepasswordComponent } from './updatepassword/updatepassword.component';
 import { CustomerComponent } from './customer/customer.component';
@@ -29,6 +43,21 @@ import { SuperAdmin1Component } from './super-admin1/super-admin1.component';
     HomeComponent,
     RegistrationComponent,
     StaffloginComponent,
+    ProfileComponent,
+    CreateaccountComponent,
+    AddbeneficiaryComponent,
+    RemovebeneficiaryComponent,
+    TransfermoneyComponent,
+    ViewstatementComponent,
+    ProfileheaderComponent
+    StaffheaderComponent,
+ 
+    SearchcustomerComponent,
+    BeneficiaryservicesComponent,
+    AccountservicesComponent,
+    TransactionservicesComponent,
+    CustomerenableComponent,
+    AccounttransactionsComponent,
     ForgotpasswordComponent,
     UpdatepasswordComponent,
     CustomerComponent,

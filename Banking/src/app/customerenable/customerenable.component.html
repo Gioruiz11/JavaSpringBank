@@ -1,0 +1,29 @@
+<table class="table " *ngIf= "users" then> 
+    <tr>
+        <th scope="col">#</th>
+        <th>Id</th>
+        <th>Name</th>
+        
+        <th> Disable/Enable</th>
+
+
+
+    </tr>
+    <tr *ngFor="let user of users">
+        <th scope="row">#</th>
+        <td>{{user.customerId}}</td>
+        <td>{{user.fullName}}</td>
+        
+        <label *ngIf= "user.status==true"class="switch">
+            <input type="checkbox" checked (click)="changeuserStatus(user.customerId)">
+            <span class="slider"></span>
+          </label>
+
+           
+        <label *ngIf= "user.status!=true"class="switch">
+            <input type="checkbox" (click)="changeuserStatus(user.customerId)">
+            <span class="slider"></span>
+          </label>
+        
+       
+    </tr>

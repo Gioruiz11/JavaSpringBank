@@ -1,6 +1,3 @@
 {
-    "java.configuration.updateBuildConfiguration": "interactive",
-    "githubPullRequests.ignoredPullRequestBranches": [
-        "master"
-    ]
+    "java.configuration.updateBuildConfiguration": "interactive"
 }
