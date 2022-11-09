@@ -47,6 +47,7 @@ export class StaffloginComponent implements OnInit {
           
           if(this.user.staffUserName == this.users[i].staffUserName && this.user.staffPassword == this.users[i].staffPassword){
             this.ack = "Login successful";
+            this.signupService.setter(this.users[i]);
             this.router.navigate(['/staff']);
             
           }

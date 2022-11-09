@@ -40,6 +40,7 @@ export class LoginComponent implements OnInit {
           console.log(this.user)
           if(this.user.userName == this.users[i].userName && this.user.password == this.users[i].password){
             this.ack = "Login successful";
+            this.signupService.setter(this.users[i]);
             this.router.navigate(['/customer']);
           }
         }

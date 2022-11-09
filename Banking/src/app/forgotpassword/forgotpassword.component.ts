@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { HAMMER_LOADER } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { Customer } from '../customer';
 import { CustomerService } from '../customer.service';
@@ -44,8 +45,10 @@ export class ForgotpasswordComponent implements OnInit {
           console.log(this.user)
           if(this.user.userName == this.users[i].userName && this.user.secretQuestion == this.users[i].secretQuestion 
             && this.user.secretAnswer == this.users[i].secretAnswer){
-              
+              this.signupService.setter(this.users[i]);
               this.router.navigate(['/updatepassword'])
+          }else{
+            this.ack = "Wrong Credentials Please Try Again";
           }
         }
       },error=>console.log(error));

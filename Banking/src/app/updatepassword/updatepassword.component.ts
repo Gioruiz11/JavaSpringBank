@@ -11,13 +11,11 @@ import { CustomerService } from '../customer.service';
 })
 export class UpdatepasswordComponent implements OnInit {
 
-  @Input()
-  user1 : Customer= new Customer();
-
   user : Customer= new Customer();
   users: any;
-  ack:any;
+  password:any;
   cpassword : any;
+  ack: any;
 
   constructor(private signupService:CustomerService, private router: Router) { }
 
@@ -34,15 +32,19 @@ export class UpdatepasswordComponent implements OnInit {
   }
 
   update() {
-    this.user.password= this.f['password'].value; 
+
+    this.password= this.f['password'].value; 
     this.cpassword =this.f['cpassword'].value;
     
-    if(this.user.password == this.cpassword){
-      this.signupService.putuserlist(this.user).subscribe(data=>{this.users=data;
-        //Update Password goes here
-      },error=>console.log(error));
-
-  
+    if(this.password == this.cpassword){
+      this.user = this.signupService.getter();
+      this.user.password = this.password;
+      console.log(this.user)
+      this.signupService.putuserlist(this.user).subscribe((data: any)=>
+      console.log(data),(error: any)=>console.log(error));
+      this.ack = "Update Successful Please Login";
+    }else{
+      this.ack = "Passwords do not match";
     }
 
   }

@@ -1,4 +1,9 @@
-<div id="header">
-    <a href ="/"><img src="/assets/images/bank-getty.jpg" /></a>
-    <a href="/stafflogin">Staff Corner</a>
+<div id="header" >
+    <a href ="/" (click) = logout()><img src="/assets/images/bank-getty.jpg" /></a>
+
+
+    <div *ngIf="cust || staff; else elseBlock">
+        <a (click) = "logout()" href="/">Logout</a>
+    </div>
+    <ng-template #elseBlock><a href="/stafflogin">Staff Corner</a></ng-template>
 </div>
