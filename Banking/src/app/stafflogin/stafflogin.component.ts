@@ -1,5 +1,5 @@
+import { Component, OnInit, Output } from '@angular/core';
 import { ElementSchemaRegistry } from '@angular/compiler';
-import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Staff } from '../staff';
@@ -15,11 +15,13 @@ export class StaffloginComponent implements OnInit {
   user : Staff= new Staff();
   users: any;
   ack:any;
-
+ 
+ 
+  
   constructor(private signupService:StaffService, private router: Router) { }
 
   ngOnInit(): void {
-
+    
   }
 
   profileForm = new FormGroup({
@@ -41,6 +43,7 @@ export class StaffloginComponent implements OnInit {
         for(let i=0; i<data.length; i++){
           console.log(this.users)
           console.log(this.user)
+
           
           if(this.user.staffUserName == "admin@admin.com" && this.user.staffPassword == "secret@123"){
             this.user.staffFullName = "SuperAdmin";
@@ -50,7 +53,6 @@ export class StaffloginComponent implements OnInit {
             this.ack = "Login successful";
             this.signupService.setter(this.users[i]);
             this.router.navigate(['/staff']);
-            
           }
           
         }
