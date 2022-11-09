@@ -3,13 +3,14 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Staff } from './staff';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class StaffService {
 
-  s : Staff = new Staff();
 
+  s : Staff = new Staff();
   private baseUrl = 'http://localhost:8080';
 
   constructor(private http:HttpClient) { }

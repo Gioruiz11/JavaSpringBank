@@ -12,6 +12,7 @@ import { StaffloginComponent } from './stafflogin/stafflogin.component';
 import { TransactionservicesComponent } from './transactionservices/transactionservices.component';
 import { AdminComponent } from './admin/admin.component';
 import { CreatestaffComponent } from './createstaff/createstaff.component';
+import { ProfileComponent } from './profile/profile.component';
 import { CustomerComponent } from './customer/customer.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { StaffComponent } from './staff/staff.component';
@@ -35,6 +36,7 @@ const routes: Routes = [{ path: '', component: LoginComponent },
 { path: 'admin', component: AdminComponent },
 { path: 'createstaff', component: CreatestaffComponent },
 { path: 'viewstaff', component: ViewstaffComponent },
+{ path: 'profile', component: ProfileComponent },
 ];
 
 

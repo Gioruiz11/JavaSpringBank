@@ -1,7 +1,8 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Customer } from './customer';
+
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,9 @@ export class CustomerService {
 
   private baseUrl = 'http://localhost:8080';
  
+
   c: Customer = new Customer();
+
 
   constructor(private http:HttpClient) { }
 
@@ -25,6 +28,11 @@ export class CustomerService {
     console.log("success");
     return this.http.post(`${this.baseUrl}` + '/api/customer/register', user);
   }
+  createaccountlist(customerId: object): Observable<object> {
+    console.log("success");
+    return this.http.post(`${this.baseUrl}` + '/api/customer/' + `${customerId}` + '/account', customerId);
+  }
+
 
   getuserList(): Observable<any> {
 
@@ -48,5 +56,6 @@ export class CustomerService {
 
   getter(){
       return this.c;
+
   }
 }

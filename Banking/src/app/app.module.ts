@@ -10,8 +10,14 @@ import { HomeComponent } from './home/home.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StaffloginComponent } from './stafflogin/stafflogin.component';
+import { ProfileComponent } from './profile/profile.component';
+import { CreateaccountComponent } from './createaccount/createaccount.component';
+import { AddbeneficiaryComponent } from './addbeneficiary/addbeneficiary.component';
+import { RemovebeneficiaryComponent } from './removebeneficiary/removebeneficiary.component';
+import { TransfermoneyComponent } from './transfermoney/transfermoney.component';
+import { ViewstatementComponent } from './viewstatement/viewstatement.component';
+import { ProfileheaderComponent } from './profileheader/profileheader.component';
 import { StaffheaderComponent } from './staffheader/staffheader.component';
-
 import { SearchcustomerComponent } from './searchcustomer/searchcustomer.component';
 import { BeneficiaryservicesComponent } from './beneficiaryservices/beneficiaryservices.component';
 import { AccountservicesComponent } from './accountservices/accountservices.component';
@@ -35,6 +41,13 @@ import { ViewstaffComponent } from './viewstaff/viewstaff.component';
     HomeComponent,
     RegistrationComponent,
     StaffloginComponent,
+    ProfileComponent,
+    CreateaccountComponent,
+    AddbeneficiaryComponent,
+    RemovebeneficiaryComponent,
+    TransfermoneyComponent,
+    ViewstatementComponent,
+    ProfileheaderComponent
     StaffheaderComponent,
  
     SearchcustomerComponent,

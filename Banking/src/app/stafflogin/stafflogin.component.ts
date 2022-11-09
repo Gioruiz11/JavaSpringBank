@@ -1,3 +1,4 @@
+
 import { Component, OnInit, Output } from '@angular/core';
 import { ElementSchemaRegistry } from '@angular/compiler';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
@@ -54,7 +55,7 @@ export class StaffloginComponent implements OnInit {
             this.signupService.setter(this.users[i]);
             this.router.navigate(['/staffheader']);
           }
-          
+
         }
       },error=>console.log(error));
 
