@@ -4,6 +4,14 @@
 
     <div *ngIf="cust || staff; else elseBlock">
         <a (click) = "logout()" href="/">Logout</a>
+        <div class="jumbotron text-center">
+            <div *ngIf="cust">
+                <p>Welcome {{c.fullName}}</p>
+            </div>
+            <div *ngIf="staff">
+                <p>Welcome {{s.staffFullName}}</p>
+            </div>
+        </div>
     </div>
     <ng-template #elseBlock><a href="/stafflogin">Staff Corner</a></ng-template>
 </div>

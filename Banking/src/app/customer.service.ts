@@ -28,7 +28,7 @@ export class CustomerService {
 
   getuserList(): Observable<any> {
 
-    return this.http.get(`${this.baseUrl}` + '/api/customer/getcustomers');  //will change
+    return this.http.get(`${this.baseUrl}` + '/api/staff/customer');
 
   }
 
