@@ -32,13 +32,15 @@ export class CustomerService {
 
   }
 
-
   putuserlist(user: Customer): Observable<object> {
     console.log("success");
     this.c = new Customer();
     return this.http.put(`${this.baseUrl}` + '/api/customer/' + `${user.customerId}`, user);
   }
 
+  changeStatus(id:any): Observable<object> {
+    return this.http.put(`${this.baseUrl}` + '/api/staff/customer', id);
+  }
 
   setter(user: Customer){
       this.c = user;

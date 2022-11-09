@@ -42,7 +42,7 @@ import { ViewstaffComponent } from './viewstaff/viewstaff.component';
     AccountservicesComponent,
     TransactionservicesComponent,
     CustomerenableComponent,
-    AccounttransactionsComponent
+    AccounttransactionsComponent,
     ForgotpasswordComponent,
     UpdatepasswordComponent,
     CustomerComponent,
