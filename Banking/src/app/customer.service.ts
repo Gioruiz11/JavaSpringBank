@@ -29,6 +29,11 @@ export class CustomerService {
     return this.http.get(`${this.baseUrl}` + '/api/customer/getcustomers');  //will change
 
   }
+  changeStatus(id:any):Observable<any> {
+     console.log(id)
+    return this.http.put(`${this.baseUrl}` + '/api/staff/customer',id);  //will change
+
+  }
  
 
 }

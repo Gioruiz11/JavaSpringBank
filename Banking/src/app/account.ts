@@ -4,4 +4,5 @@ export class Account {
 	accountStatus:any
 	accountType:any
 	accountBalance:any
+	customer_id:any
 }

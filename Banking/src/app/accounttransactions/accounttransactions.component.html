@@ -1,0 +1,64 @@
+<div id="Search Account">
+    <h1>Search Account by ID</h1>
+   
+    <form [formGroup]="SearchForm"  (ngSubmit)="getaccountinfo(accId.value)">
+        <label for="Account Id">ID</label>
+        <input type="number" id="Account" #accId name="Account" required formControlName="id" />
+        <br />
+        <button type="submit">Search</button>
+        
+       
+    </form>
+   
+</div>
+
+
+<table class="table " *ngIf= "users.accountNumber!=null" then> 
+    <tr>
+        <th scope="col">#</th>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Balance</th>
+     
+        
+
+
+
+    </tr>
+    <tr >
+        <th scope="row">#</th>
+           
+    <td>{{users.accountNumber}}</td>
+    <!--<td>{{user2.fullName}}</td>-->
+    <td>{{users.accountBalance}}</td>
+    
+   
+        
+       
+    </tr>
+</table>
+<!--<table class="table " *ngIf= "user1.id!=null" then> 
+    <tr>
+        <th scope="col">#</th>
+        <th>Id</th>
+        <th>Reason</th>
+        <th>Amount</th>
+        <th>Dr/Cr</th>
+        
+
+
+
+    </tr>
+    <tr *ngFor="let user1 of users1">>
+        <th scope="row">#</th>
+           
+    <td>{{user1.id}}</td>
+    <td>{{user1.reason}}</td>
+    <td>{{user1.amount}}</td>
+    <td>{{user1.transactionType}}</td>
+    
+   
+        
+       
+    </tr>
+</table>-->

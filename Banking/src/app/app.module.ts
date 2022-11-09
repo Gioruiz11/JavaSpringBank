@@ -16,6 +16,8 @@ import { SearchcustomerComponent } from './searchcustomer/searchcustomer.compone
 import { BeneficiaryservicesComponent } from './beneficiaryservices/beneficiaryservices.component';
 import { AccountservicesComponent } from './accountservices/accountservices.component';
 import { TransactionservicesComponent } from './transactionservices/transactionservices.component';
+import { CustomerenableComponent } from './customerenable/customerenable.component';
+import { AccounttransactionsComponent } from './accounttransactions/accounttransactions.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { TransactionservicesComponent } from './transactionservices/transactions
     SearchcustomerComponent,
     BeneficiaryservicesComponent,
     AccountservicesComponent,
-    TransactionservicesComponent
+    TransactionservicesComponent,
+    CustomerenableComponent,
+    AccounttransactionsComponent
   ],
   imports: [
     BrowserModule,
