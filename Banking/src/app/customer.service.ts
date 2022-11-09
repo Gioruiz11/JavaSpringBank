@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Customer } from './customer';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,7 @@ export class CustomerService {
 
   private baseUrl = 'http://localhost:8080';
  
+  c: Customer = new Customer();
 
   constructor(private http:HttpClient) { }
 
@@ -29,11 +31,20 @@ export class CustomerService {
     return this.http.get(`${this.baseUrl}` + '/api/customer/getcustomers');  //will change
 
   }
-  changeStatus(id:any):Observable<any> {
-     console.log(id)
-    return this.http.put(`${this.baseUrl}` + '/api/staff/customer',id);  //will change
 
+
+  putuserlist(user: Customer): Observable<object> {
+    console.log("success");
+    this.c = new Customer();
+    return this.http.put(`${this.baseUrl}` + '/api/customer/' + `${user.customerId}`, user);
   }
- 
 
+
+  setter(user: Customer){
+      this.c = user;
+  }
+
+  getter(){
+      return this.c;
+  }
 }

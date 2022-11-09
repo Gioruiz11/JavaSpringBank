@@ -1,6 +1,7 @@
 export class Staff {
-    staffid:any;
-    username:any;
-    password:any;
+    staffId:any;
+    staffFullName:any;
+    staffUserName:any;
+    staffPassword:any;
     status:any;
 }

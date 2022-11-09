@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Customer } from '../customer';
@@ -38,8 +38,11 @@ export class LoginComponent implements OnInit {
         for(let i=0; i<data.length; i++){
           console.log(this.users)
           console.log(this.user)
-          if(this.user.userName == this.users[i].username && this.user.password == this.users[i].password){
+
+          if(this.user.userName == this.users[i].userName && this.user.password == this.users[i].password){
             this.ack = "Login successful";
+            this.signupService.setter(this.users[i]);
+            this.router.navigate(['/customer']);
           }
         }
       },error=>console.log(error));

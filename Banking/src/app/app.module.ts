@@ -18,6 +18,13 @@ import { AccountservicesComponent } from './accountservices/accountservices.comp
 import { TransactionservicesComponent } from './transactionservices/transactionservices.component';
 import { CustomerenableComponent } from './customerenable/customerenable.component';
 import { AccounttransactionsComponent } from './accounttransactions/accounttransactions.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { UpdatepasswordComponent } from './updatepassword/updatepassword.component';
+import { CustomerComponent } from './customer/customer.component';
+import { StaffComponent } from './staff/staff.component';
+import { AdminComponent } from './admin/admin.component';
+import { CreatestaffComponent } from './createstaff/createstaff.component';
+import { ViewstaffComponent } from './viewstaff/viewstaff.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +43,13 @@ import { AccounttransactionsComponent } from './accounttransactions/accounttrans
     TransactionservicesComponent,
     CustomerenableComponent,
     AccounttransactionsComponent
+    ForgotpasswordComponent,
+    UpdatepasswordComponent,
+    CustomerComponent,
+    StaffComponent,
+    AdminComponent,
+    CreatestaffComponent,
+    ViewstaffComponent
   ],
   imports: [
     BrowserModule,
