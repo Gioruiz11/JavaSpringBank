@@ -4,3 +4,7 @@ form {
     width: 17%;
     padding: 20px;
 }
+
+label {
+    margin-left: 2px;
+}
