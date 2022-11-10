@@ -6,8 +6,15 @@
 
 #profile a {
     float: left;
+    width: 400px;
     margin-left: 5%;
-    padding-top: 10%;
+    padding: 3%;
     margin-top: 3%;
+    text-decoration: none;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    background-color: white;
+    color: black;
 }
 
