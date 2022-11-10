@@ -59,11 +59,11 @@ export class CreateaccountComponent implements OnInit {
     this.user.accountType=this.f['accountType'].value;
     this.user.accountStatus=false;
     this.user.dateOfCreation=this.f['dateOfCreation'].value;
-    this.user.customer_id = 0;
+    this.user.customer_id = sessionStorage.getItem('custid');
     
     console.log(this.profileForm.value)
     //Post Operationwill be executed here
-    if (this.user.customer_id==0){
+    if (this.user.customer_id!= null){
     this.addAccount();
     // this.ack = "Account Creation under process";
     // this.router.navigate(["/profile"]);
