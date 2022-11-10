@@ -29,7 +29,7 @@ import { CustomerService } from '../customer.service';
 export class CreateaccountComponent implements OnInit {
 
   user : Account = new Account();
-  users: any;
+  users: Customer = new Customer();
   ack: any;
 
   constructor(private signupService:CustomerService, private router: Router) { }
@@ -41,6 +41,9 @@ export class CreateaccountComponent implements OnInit {
 
     accountBalance: new FormControl('', [Validators.required]),
     accountType: new FormControl('', [Validators.required]),
+    accountStatus: new FormControl('', [Validators.required]),
+    dateOfCreation: new FormControl('', [Validators.required]),
+    
   
   });
   
@@ -52,13 +55,15 @@ export class CreateaccountComponent implements OnInit {
 
     //console.log('Name:' + this.somedata.name);
     //console.log('Series:' + this.somedata.series);
-
     this.user.accountBalance=this.f['accountBalance'].value;
     this.user.accountType=this.f['accountType'].value;
+    this.user.accountStatus=false;
+    this.user.dateOfCreation=this.f['dateOfCreation'].value;
+    this.user.customer_id = sessionStorage.getItem('custid');
     
     console.log(this.profileForm.value)
     //Post Operationwill be executed here
-    if (this.user.customer_id!=null){
+    if (this.user.customer_id!= null){
     this.addAccount();
     // this.ack = "Account Creation under process";
     // this.router.navigate(["/profile"]);
@@ -69,7 +74,7 @@ export class CreateaccountComponent implements OnInit {
   }
 
   addAccount() {
-    this.signupService.createuserlist(this.user).subscribe((data: any)=>
+    this.signupService.createaccountlist(this.user).subscribe((data: any)=>
       console.log(data),(error: any)=>console.log(error));
     this.user = new Account();
     this.ack = "Account Creation under process";

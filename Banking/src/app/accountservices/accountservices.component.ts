@@ -15,6 +15,7 @@ users: any;
   constructor(private signupService:AccountService,private router:Router) { }
 
   ngOnInit(): void {
+    this.getaccounts()
   }
   getaccounts(){
     this.signupService.getuserList().subscribe(data=>{this.users=data;

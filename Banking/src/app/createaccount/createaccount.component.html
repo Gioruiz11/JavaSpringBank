@@ -4,18 +4,16 @@
     <h2>Create Account Form</h2>
     <form [formGroup]="profileForm" (ngSubmit)="createAccount()">
         <input type="text" placeholder="   Enter Initial Deposit" name="accountBalance" required formControlName="accountBalance">
+        <input type="text" placeholder="   Enter Date" name="dateOfCreation" required formControlName="dateOfCreation">
+        <input type="text" placeholder="   Enter Account Type" name="accountType" required formControlName="accountType">
+        <!-- <input type="text" placeholder="   Enter Account Status" name="accountStatus" required formControlName="accountStatus"> -->
         <p>Select Type Of Account</p>
         <!-- <label for="Savings Bank">Savings Bank</label><br>
         <input type="checkbox">
         <label for="Current Account">Current Account</label><br>
         <input type="checkbox"> -->
-       
-        <input type="checkbox" placeholder="Savings Bank" name="accountBalance" required formControlName="accountBalance">
-        <label for="Savings Bank">Savings Bank</label>
-        <br>
-        <input type="checkbox" placeholder="Savings Bank" name="accountBalance" required formControlName="accountBalance">
-        <label for="Savings Bank">Current Account</label>
-        <br><br>
+
+
         <button type="submit">Submit</button>
         <div class="jumbotron text-center">
             <h3 style="color: green; font-family: sans-serif; font-size: 8;">{{ack | uppercase}}</h3>
