@@ -43,7 +43,7 @@ export class CustomerService {
 
   getuserList(): Observable<any> {
 
-    return this.http.get(`${this.baseUrl}` + '/api/customer/getcustomers');
+    return this.http.get(`${this.baseUrl}` + '/api/staff/customers');
 
   }
 
