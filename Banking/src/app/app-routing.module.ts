@@ -19,6 +19,11 @@ import { StaffComponent } from './staff/staff.component';
 import { UpdatepasswordComponent } from './updatepassword/updatepassword.component';
 import { ViewstaffComponent } from './viewstaff/viewstaff.component';
 import { CreateaccountComponent } from './createaccount/createaccount.component';
+import { AddbeneficiaryComponent } from './addbeneficiary/addbeneficiary.component';
+import { RemovebeneficiaryComponent } from './removebeneficiary/removebeneficiary.component';
+import { TransfermoneyComponent } from './transfermoney/transfermoney.component';
+import { ViewstatementComponent } from './viewstatement/viewstatement.component';
+
 
 const routes: Routes = [{ path: '', component: LoginComponent },
 { path: 'stafflogin', component: StaffloginComponent },
@@ -39,6 +44,10 @@ const routes: Routes = [{ path: '', component: LoginComponent },
 { path: 'viewstaff', component: ViewstaffComponent },
 { path: 'profile', component: ProfileComponent },
 { path: 'createaccount', component: CreateaccountComponent },
+{ path: 'addbeneficiary', component: AddbeneficiaryComponent },
+{ path: 'removebeneficiary', component: RemovebeneficiaryComponent },
+{ path: 'transfermoney', component: TransfermoneyComponent },
+{ path: 'viewstatement', component: ViewstatementComponent },
 ];
 
 

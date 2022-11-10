@@ -65,6 +65,23 @@ public class StaffController {
 		
 	}
 	
+	@GetMapping("/customer/search/{accountid}")
+	public String getCustomerByAccountId(@PathVariable("accountid") long accountid) {
+		Account acc= new Account();
+		acc=staffService.getaccountByid(accountid);
+	    Customer cust=new Customer();
+		cust=acc.getCustomer();
+		String name=cust.getFullName();
+		return name;
+		
+		
+		
+		
+		
+		
+		
+	}
+	
 	@PutMapping("/beneficiary/approve")
 	public ResponseEntity<List<Beneficiary>> approveBeneficiary(@RequestBody int customerid) {
 		List<Beneficiary> listBen= new ArrayList<>();
@@ -222,6 +239,14 @@ public class StaffController {
 	
 	
 	
+    
+    @GetMapping("/account/info/{accountid}")
+    public Account getAccountById(@PathVariable("accountid") int accountid){
+            return staffService.getaccountByid((long) accountid);
+            
+            
+            
+    }
 	
 	
 	

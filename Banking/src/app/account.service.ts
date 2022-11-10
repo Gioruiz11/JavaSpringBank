@@ -30,9 +30,9 @@ export class AccountService {
   }
 
   getAccountStatement(id:any): Observable<any>{
-    this.id=id
-    console.log(this.id)
-    return this.http.get(`${this.baseUrl}` + '/api/staff/account/' + `${this.id}`)
+   
+    console.log(id)
+    return this.http.get(`${this.baseUrl}` + `/api/staff/account/${id}`)
 
 
   }
@@ -46,7 +46,8 @@ export class AccountService {
   }
 
  getAccountName(id:any): Observable<any>{
-  return this.http.get(`${this.baseUrl}` + `api/staff/customer/search/${id}`)
+  
+  return this.http.get(`${this.baseUrl}` + `/api/staff/customer/search/${id}`,{responseType: 'text'})
 
 
 }
