@@ -10,7 +10,7 @@ import { Customer } from './customer';
 })
 export class CustomerService {
 
-  private baseUrl = 'http://localhost:8080';
+  private baseUrl = 'http://localhost:8070';
  
 
   c: Customer = new Customer();
@@ -49,7 +49,7 @@ export class CustomerService {
 
   getuserList(): Observable<any> {
 
-    return this.http.get(`${this.baseUrl}` + '/api/customer/getcustomers');
+    return this.http.get(`${this.baseUrl}` + '/api/staff/customers');
 
   }
 

@@ -1,0 +1,18 @@
+input {
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin-right: 60px;
+}
+
+.container {
+    border: 1px solid black;
+    width: 350px;
+    height: 450px;
+    padding-top: 30px;
+}
+
+button {
+    margin-right: 60px;
+}

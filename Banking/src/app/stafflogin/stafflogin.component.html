@@ -1,13 +1,39 @@
+
+
+
 <div class="jumbotron text-center"> 
     <div id="login">
         <h1>Staff Login</h1>
+        <div>
+           <br>
+           <div class="imgcontainer">
+            <img  class="one" src="/assets/images/pass.jpeg" alt="Avatar" class="avatar"  style="object-fit:scale-down;
+            width:100px;
+            height:100px;
+            border: solid 1px #CCC"/>
+        </div>
+           <br>
+
+             <br>
+            <div class="jumbotron text-center">
+                <h5>{{ack1}}</h5>
+        </div>
+            <br>
         <form [formGroup]="profileForm" (ngSubmit)="login()">
             <label for="userName">Username:</label>
+            <div class="alert-danger"  *ngIf="f['username'].touched">
+                <div *ngIf="f['username'].errors?.['required']" > Name is required </div>
+                <div *ngIf="f['username'].errors?.['minlength']" >Length must be 4</div>
+            </div>
             <input type="text" name="username" required formControlName="username" />
             <br />
             <label for="password">Password:</label>
+            <div class="alert-danger"  *ngIf="f['password'].touched">
+                <div *ngIf="f['password'].errors?.['required']" >Password is required </div>
+                <div *ngIf="f['password'].errors?.['minlength']" >Length must be > 4</div>
+            </div>
             <input type="text" name="password" required formControlName="password"/>
-            <br />
+           
             <button type="submit">Login</button>
             <h3>{{ack}}</h3>
            

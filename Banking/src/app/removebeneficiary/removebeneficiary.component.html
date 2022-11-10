@@ -9,15 +9,15 @@
 
 
     </tr>
-    <!--<tr *ngFor="let user of users">
+    <tr *ngFor="let user of users">
             <th scope="row">#</th>
-            <td>{{ user.customerId }}</td>
-            <td>{{user.fullName }}</td>
-            <td> <button class="btn btn-danger btn-rounded" (click)="deleteUser(user.customerId)"> Delete User</button>
+            <td>{{ user.beneficiaryAccountNo}}</td>
+            <td>{{user.beneficiaryName }}</td>
+            <td> <button class="btn btn-danger btn-rounded" (click)="deleteUser(user.beneficiaryId)"> Delete User</button>
             </td>
         
 
-        </tr>-->
+        </tr>
 
 
 </table>
