@@ -36,7 +36,7 @@ export class ViewstatementComponent implements OnInit {
   }
 
   getTranscation(id: any) {  
-    this.signupService1.getAccountInfo(id)
+    this.signupService1.getAccountStatement(id)
       .subscribe(data=>
         {this.users2=data},error=>console.log(error)) ;
 
