@@ -37,5 +37,5 @@ a:visited{
 #header {
     border: 1px solid black;
     padding: 3%;
-    border-radius: 3%;
+    /*border-radius: 3%; i removed this...*/
 }
