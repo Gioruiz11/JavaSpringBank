@@ -20,6 +20,12 @@ export class AccountService {
     return this.http.get(`${this.baseUrl}` + '/api/staff/account/approval');  //will change
 
   }
+
+  getAccount(custid:any): Observable<any> {
+
+    return this.http.get(`${this.baseUrl}` + '/api/customer/'+`${custid}`+'/getaccount');  
+
+  }
   changeuserStatus(id:any): Observable<any>{
     console.log(id)
     return this.http.put(`${this.baseUrl}` + '/api/staff/account/change/status',id,{responseType: 'text'}); 
