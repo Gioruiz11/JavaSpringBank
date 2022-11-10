@@ -1,11 +1,11 @@
 <body>
     <app-profile></app-profile>
     <form [formGroup]="profileForm" (ngSubmit)="submit()">
-        <h1>Add Beneficiary</h1>
+        <h2>Add Beneficiary</h2>
         <input type="text" placeholder="Enter Account Number" formControlName="accountNumber"><br><br>
         <input type="text" placeholder="Confirm Account Number" formControlName="confirmAccountNumber"><br><br>
 
-        <h2>Select Type Of Account</h2>
+        <h2>Account Type</h2>
 
         <input type="radio" id="credit" value="credit" formControlName="accounttype">
         <label for="credit">credit</label><br>
