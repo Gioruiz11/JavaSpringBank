@@ -58,6 +58,8 @@ export class TransfermoneyComponent implements OnInit {
    this.signupService.createTransaction(this.user).subscribe(data=>{this.users=data;
     this.user=new Transaction();
   },error=>console.log(error))
+  sessionStorage.removeItem("moved");
+  this.router.navigate(["/profile"]);
 
 }
 }

@@ -51,6 +51,7 @@ export class AddbeneficiaryComponent implements OnInit {
   addUser() {
     this.signupService.createuserlist(this.user, sessionStorage.getItem('custid')).subscribe((data: any)=>
       console.log(data),(error: any)=>console.log(error));
+    sessionStorage.removeItem("moved");
     this.router.navigate(["/profile"]);
 
   }

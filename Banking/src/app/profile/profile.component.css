@@ -18,3 +18,15 @@
     color: black;
 }
 
+#account {
+    font-size: 16pt;
+    margin-left: 60%;
+    position: fixed;
+    margin-top: -5%;
+}
+
+.group {
+    border: 1px solid black;
+    margin-top: 3%;
+    
+}

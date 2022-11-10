@@ -1,8 +1,16 @@
-
 <div id="profile">
-    <a href="/createaccount">Create Account</a>
-    <a href="/addbeneficiary">Add Beneficiary</a>
-    <a href="/removebeneficiary">Remove Beneficiary</a>
-    <a href="/transfermoney">Transfer Money</a>
-    <a href="/viewstatement">View Statement</a>
+    <a href="/createaccount" (click)="click()">Create Account</a>
+    <a href="/addbeneficiary" (click)="click()">Add Beneficiary</a>
+    <a href="/removebeneficiary" (click)="click()">Remove Beneficiary</a>
+    <a href="/transfermoney" (click)="click()">Transfer Money</a>
+    <a href="/viewstatement" (click)="click()">View Statement</a>
+</div>
+
+<div *ngIf="s == null" id="account">
+    <table *ngFor="let user of users">
+        <div class="group">
+        <tr><td>Account Type: {{user.accountType}}</td></tr>
+        <tr><td>Account Balance: {{user.accountBalance}}</td></tr>
+        </div>
+    </table>
 </div>
