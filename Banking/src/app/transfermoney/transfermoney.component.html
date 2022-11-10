@@ -1,1 +1,25 @@
-<p>transfermoney works!</p>
+<app-profile></app-profile>
+<form > <!--[formGroup]="transactionForm" (ngSubmit)="submit()" -->
+    <!-- <form action="action_page.php" method="post"> -->
+    <div class="imgcontainer">
+
+    </div>
+    <div class="jumbotron text-center">
+        <div class="container">
+            <h4>
+                <input type="text" placeholder="Transaction Reason" name="reason" required formControlName="reason">
+                <br>
+                <input type="number" placeholder="From Account #" name="fromAccountNo" formControlName="fromAccountNo">
+                <br>
+                <input type="number" placeholder="To Account #" name="toAccountNo" required formControlName="toAccountNo">
+                <br>
+                <input type="number" step="0.01" min=0 placeholder="Amount To Transfer" name="amount" required formControlName="amount">
+                <br>
+                <input type="text" placeholder="Transaction Type" name="transactionType" required formControlName="transactionType">
+                <br>
+               
+                <button type="submit">Submit Transaction</button><br>
+            </h4>
+        </div>
+    </div>
+</form>
