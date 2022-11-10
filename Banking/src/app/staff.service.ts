@@ -11,7 +11,7 @@ export class StaffService {
 
 
   s : Staff = new Staff();
-  private baseUrl = 'http://localhost:8070';
+  private baseUrl = 'http://localhost:8080';
 
   constructor(private http:HttpClient) { }
 
