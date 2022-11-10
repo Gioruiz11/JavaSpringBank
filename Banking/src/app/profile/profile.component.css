@@ -1,34 +1,13 @@
 #profile {
-    /* border: 1px solid black;
-    border-radius: 0%;
-    border-top: 2%;
-    border-right: 2%; */
-    width: 35%;
+    width: 15%;
+    font-size: 18pt;
+    margin-top: 7%;
+}
+
+#profile a {
     float: left;
     margin-left: 5%;
+    padding-top: 10%;
     margin-top: 3%;
 }
 
-#account1 {
-    width: 25%;
-    border: 1px solid black;
-    float: left;
-    margin-top: 3%;
-    margin-left: 5%;
-    padding-left: 2%;
-    padding-bottom: 2%;
-    border-radius: 0%;
-    text-align: left;
-}
-
-#account2 {
-    width: 25%;
-    border: 1px solid black;
-    float: left;
-    margin-top: 2%;
-    margin-left: 5%;
-    padding-left: 2%;
-    padding-bottom: 2%;
-    border-radius: 0%;
-    text-align: left;
-}

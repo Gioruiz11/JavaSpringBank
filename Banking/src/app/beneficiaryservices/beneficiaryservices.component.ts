@@ -15,6 +15,7 @@ users: any;
 constructor(private signupService:BeneficiaryService, private router: Router) { }
 
 ngOnInit(): void {
+  this.BenficiaryEnable()
 }
 
 BenficiaryEnable(){
