@@ -8,6 +8,9 @@
         <a (click) = "logout()" href="/">Logout</a>
         <div class="jumbotron text-center">
             <div *ngIf="c">
+                <div id = "update">
+                <a href="/updateprofile">Profile</a>
+                </div>
                 <p>Welcome {{c}}</p>
             </div>
             <div *ngIf="s">

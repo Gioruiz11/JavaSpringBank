@@ -5,6 +5,12 @@ img {
     width: 5%;
     top: 1.5%;
 }
+
+#update a{
+    position: fixed;
+    left:-45%;
+}
+
 a{
     color: black;
     text-decoration: none;
