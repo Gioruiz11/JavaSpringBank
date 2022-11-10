@@ -40,6 +40,12 @@ export class CustomerService {
     console.log(user.customer_id);
     return this.http.post(`${this.baseUrl}` + '/api/customer/' + `${user.customer_id}` + '/postaccount', user);
   }
+  getAccountByCustomerId(user: any){
+    console.log("success");
+    console.log(user);
+    // console.log(user.customer_id);
+    return this.http.get(`${this.baseUrl}` + '/api/customer/' + `${user}` + '/getaccount');
+  }
 
   getuserList(): Observable<any> {
 
