@@ -18,6 +18,7 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
 import { StaffComponent } from './staff/staff.component';
 import { UpdatepasswordComponent } from './updatepassword/updatepassword.component';
 import { ViewstaffComponent } from './viewstaff/viewstaff.component';
+import { CreateaccountComponent } from './createaccount/createaccount.component';
 
 const routes: Routes = [{ path: '', component: LoginComponent },
 { path: 'stafflogin', component: StaffloginComponent },
@@ -37,6 +38,7 @@ const routes: Routes = [{ path: '', component: LoginComponent },
 { path: 'createstaff', component: CreatestaffComponent },
 { path: 'viewstaff', component: ViewstaffComponent },
 { path: 'profile', component: ProfileComponent },
+{ path: 'createaccount', component: CreateaccountComponent },
 ];
 
 

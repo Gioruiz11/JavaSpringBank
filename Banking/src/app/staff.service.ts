@@ -23,7 +23,7 @@ export class StaffService {
 
   createuserlist(user: object): Observable<object> {
     console.log("success");
-    return this.http.post(`${this.baseUrl}` + '/api/admin/staff', user);
+    return this.http.post(`${this.baseUrl}` + '/api/admin/addstaff', user);
   }
 
   putuserList(id:any): Observable<object> {

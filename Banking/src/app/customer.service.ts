@@ -1,6 +1,7 @@
 import { HttpClient} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Account } from './account';
 import { Customer } from './customer';
 
 
@@ -28,15 +29,21 @@ export class CustomerService {
     console.log("success");
     return this.http.post(`${this.baseUrl}` + '/api/customer/register', user);
   }
-  createaccountlist(customerId: object): Observable<object> {
-    console.log("success");
-    return this.http.post(`${this.baseUrl}` + '/api/customer/' + `${customerId}` + '/account', customerId);
-  }
 
+  // createaccountlist(user: Account): Observable<object> {
+  //   console.log("success");
+  //   return this.http.post(`${this.baseUrl}` + '/api/customer/' + `${user.customer_id}` + '/account', user);
+  // }
+
+  createaccountlist(user: Account): Observable<object> {
+    console.log("success");
+    console.log(user.customer_id);
+    return this.http.post(`${this.baseUrl}` + '/api/customer/' + `${user.customer_id}` + '/postaccount', user);
+  }
 
   getuserList(): Observable<any> {
 
-    return this.http.get(`${this.baseUrl}` + '/api/staff/customer');
+    return this.http.get(`${this.baseUrl}` + '/api/customer/getcustomers');
 
   }
 
