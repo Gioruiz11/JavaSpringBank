@@ -22,10 +22,9 @@ public class ApproverService {
 
 	public Staff createStaff(@RequestBody Staff staff) {
 		Staff s = new Staff();
-		s.setStaffId(staff.getStaffId());
 		s.setStaffFullName(staff.getStaffFullName());
 		s.setStaffUserName(staff.getStaffUserName());
-		s.setStatus(staff.isStatus());
+		s.setStaffPassword(staff.getStaffPassword());
 		return staffRepo.save(staff);
 
 	}

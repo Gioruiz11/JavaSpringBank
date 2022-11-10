@@ -11,7 +11,7 @@ export class BeneficiaryService {
       return this.http.delete(`${this.baseUrl}` + '/api/customer/' + `${custid}` + '/beneficiary/' + `${id}`);
   }
 
-  private baseUrl = 'http://localhost:8080';
+  private baseUrl = 'http://localhost:8070';
 
   constructor(private http:HttpClient) { }
 

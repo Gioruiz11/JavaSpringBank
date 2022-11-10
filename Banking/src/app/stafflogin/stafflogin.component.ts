@@ -16,13 +16,16 @@ export class StaffloginComponent implements OnInit {
   user : Staff= new Staff();
   users: any;
   ack:any;
- 
+  ack1:any;
+  loginack: any;
  
   
   constructor(private signupService:StaffService, private router: Router) { }
 
   ngOnInit(): void {
     
+    this.ack1 = "Fill In the Reqired Credentials";
+    this.loginack ="Fill In the Reqired Credentials";
   }
 
   profileForm = new FormGroup({

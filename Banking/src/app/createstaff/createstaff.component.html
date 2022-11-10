@@ -7,10 +7,22 @@
     <div class="jumbotron text-center">
         <div class="container">
             <h4>
+                <div class="alert-danger"  *ngIf="f['fullName'].touched">
+                    <div *ngIf="f['fullName'].errors?.['required']" > Full Name is required </div>
+                    <div *ngIf="f['fullName'].errors?.['minlength']" >Length must be 4</div>
+                </div>
                 <input type="text" placeholder="Enter staff name" name="fullname" required formControlName="fullName">
                 <br>
+                <div class="alert-danger"  *ngIf="f['userName'].touched">
+                    <div *ngIf="f['userName'].errors?.['required']" > Username is required </div>
+                    <div *ngIf="f['userName'].errors?.['minlength']" >Length must be 4</div>
+                </div>
                 <input type="text" placeholder="Enter staff username" name="username" formControlName="userName">
                 <br>
+                <div class="alert-danger"  *ngIf="f['password'].touched">
+                    <div *ngIf="f['password'].errors?.['required']" >Password is required </div>
+                    <div *ngIf="f['password'].errors?.['minlength']" >Length must be > 4</div>
+                </div>
                 <input type="text" placeholder="Enter password" name="password" required formControlName="password">
                 <br>
                 <button type="submit">Create</button><br>

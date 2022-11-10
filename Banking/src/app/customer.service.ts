@@ -10,7 +10,7 @@ import { Customer } from './customer';
 })
 export class CustomerService {
 
-  private baseUrl = 'http://localhost:8080';
+  private baseUrl = 'http://localhost:8070';
  
 
   c: Customer = new Customer();
