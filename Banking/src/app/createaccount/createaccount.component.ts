@@ -78,6 +78,7 @@ export class CreateaccountComponent implements OnInit {
       console.log(data),(error: any)=>console.log(error));
     this.user = new Account();
     this.ack = "Account Creation under process";
+    sessionStorage.removeItem("moved");
     this.router.navigate(["/profile"]);
     // this.router.navigate(["/profile"]);
   }

@@ -1,16 +1,13 @@
 <app-admin></app-admin>
 <form [formGroup]="profileForm" (ngSubmit)="submit()">
-    <!-- <form action="action_page.php" method="post"> -->
+
     <div class="imgcontainer">
 
     </div>
     <div class="jumbotron text-center">
         <div class="container">
             <h4>
-                <div class="alert-danger"  *ngIf="f['fullName'].touched">
-                    <div *ngIf="f['fullName'].errors?.['required']" > Full Name is required </div>
-                    <div *ngIf="f['fullName'].errors?.['minlength']" >Length must be 4</div>
-                </div>
+                <h2>Create Staff</h2>
                 <input type="text" placeholder="Enter staff name" name="fullname" required formControlName="fullName">
                 <br>
                 <div class="alert-danger"  *ngIf="f['userName'].touched">

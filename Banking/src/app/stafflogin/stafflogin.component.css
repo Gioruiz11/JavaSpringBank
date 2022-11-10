@@ -1,3 +1,4 @@
+
 body {font-family: Arial, Helvetica, sans-serif;}
 form {border: 3px solid #f1f1f1;}
 
@@ -72,3 +73,23 @@ img.one {
     color: white;
     text-align: center;
  }
+
+h1 {
+    margin-left: 60px;
+}
+
+label {
+    margin-right: 5px;
+}
+
+input[name="username"] {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+}
+
+button {
+    margin-top: 20px;
+    margin-left: 60px;
+}
+
