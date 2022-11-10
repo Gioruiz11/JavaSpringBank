@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   user : Customer= new Customer();
   users: any;
   ack:any;
-  
+
   constructor(private signupService:CustomerService, private router: Router) { }
 
   profileForm = new FormGroup({
@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
           if(this.user.userName == this.users[i].userName && this.user.password == this.users[i].password){
             this.ack = "Login successful";
             this.signupService.setter(this.users[i]);
-            this.router.navigate(['/customer']);
+            this.router.navigate(['/profile']);
           }
         }
       },error=>console.log(error));

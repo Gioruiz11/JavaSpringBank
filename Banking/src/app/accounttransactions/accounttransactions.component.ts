@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Account } from '../account';
 import { AccountService } from '../account.service';
 import { Customer } from '../customer';
+import { CustomerService } from '../customer.service';
 import { Transaction } from '../transaction';
 
 @Component({
@@ -15,7 +16,9 @@ export class AccounttransactionsComponent implements OnInit {
   user: Account= new Account();
   users:any;
   users1:any;
-    constructor(private signupService:AccountService,private router:Router) { }
+  name!: string;
+  users2:any
+    constructor(private signupService:AccountService, private cserverice:CustomerService, private router:Router) { }
   
     ngOnInit(): void {
     }
@@ -50,7 +53,17 @@ export class AccounttransactionsComponent implements OnInit {
       {this.users=data},error=>console.log(error)) ;
 
 
-    console.log(this.users.accountNumber)
+  
+    }
+    getaccountname(id:any){
+      this.signupService.getAccountName(id)
+    .subscribe(data=>
+      {this.users1=data; this.name=this.users1;this.signupService.getAccountStatement(id).subscribe(data =>{
+        this.users2 =data
+        }) },error=>console.log(error)) ;
+      console.log(this.users1)
+      
+      
     }
 
   }

@@ -1,0 +1,62 @@
+<p>super-admin1 works!</p>
+<p>super-admin1 works!</p>
+
+
+<!-- we need to create a form  to post the data-->
+<form [formGroup]="profileForm" (ngSubmit)="submit()">
+    <!-- <form action="action_page.php" method="post"> -->
+    <div class="imgcontainer"></div>
+
+    <div class="container">
+        <h4>
+            <td> <button class="btn  btn-danger btn-rounded" (click)="goToAdmin1()">Create Staff</button> </td>
+            <td> <button class="btn btn-danger btn-rounded" (click)="readUser()">View Staff</button></td>
+    
+        </h4>
+    </div>
+       
+        
+        <div class="jumbotron text-center">
+            <body>
+            <form>
+                <table>
+                    <tr>
+                        <td>
+                    <input type="text" placeholder="Enter Staff Name" name="stafffullname" required formControlName="stafffullname">
+                    <!--        here we  will add some logic  -->
+                </td>
+            </tr>
+                    <br>
+   
+                    <!-- 
+                    <div class="alert-danger" *ngIf="f['name'].touched">
+                        <div *ngIf="f['name'].invalid" [ngClass]="'error'"> Name is required </div>
+                        <div *ngIf="f['name'].errors?.['minlength']" [ngClass]="'error'">Length must be 4</div>
+                    </div>
+                    -->  
+                    <tr>
+                        <td>
+                    <input type="text" placeholder="Enter Staff UserName" name="staffUserName" formControlName="staffUserName">
+                </td>
+            </tr>
+                    <br>
+
+                    <tr>
+                        <td>
+                    <input type="text" placeholder="Enter Secure Password" name="staffPassword" required formControlName="staffPassword">
+                </td>
+            </tr>
+                    <br>
+                    <tr>
+                        <td>
+                    <input type="text" placeholder="Re Enter Password" name="staffPassword" required formControlName="staffPassword">
+                </td>
+            </tr>
+                </table>
+            </form>
+        </body>
+                     <br>
+                    <button type="submit">Create</button><br>
+            
+
+            </div>
