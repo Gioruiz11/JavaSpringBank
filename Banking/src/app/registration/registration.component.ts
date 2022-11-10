@@ -62,6 +62,8 @@ export class RegistrationComponent implements OnInit {
     this.signupService.createuserlist(this.user).subscribe((data: any)=>
       console.log(data),(error: any)=>console.log(error));
     this.user = new Customer();
+    this.router.navigate(["/profile"]);
+
   }
 
 }

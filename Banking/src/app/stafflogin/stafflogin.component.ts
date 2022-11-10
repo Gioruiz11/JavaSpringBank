@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+
+import { Component, OnInit, Output } from '@angular/core';
+import { ElementSchemaRegistry } from '@angular/compiler';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Staff } from '../staff';
@@ -14,11 +16,13 @@ export class StaffloginComponent implements OnInit {
   user : Staff= new Staff();
   users: any;
   ack:any;
-
+ 
+ 
+  
   constructor(private signupService:StaffService, private router: Router) { }
 
   ngOnInit(): void {
-
+    
   }
 
   profileForm = new FormGroup({
@@ -36,22 +40,24 @@ export class StaffloginComponent implements OnInit {
     
     if(this.user.staffUserName!='' && this.user.staffPassword !=null){
 
-      if(this.user.staffUserName == "admin@admin.com" && this.user.staffPassword == "secret@123"){
-        this.router.navigate(['/admin']);
-      }
-
       this.signupService.getuserList().subscribe(data=>{this.users=data;
         for(let i=0; i<data.length; i++){
           console.log(this.users)
           console.log(this.user)
+
           
-          if(this.user.staffUserName == this.users[i].staffUserName && this.user.staffPassword == this.users[i].staffPassword){
+          if(this.user.staffUserName == "admin@admin.com" && this.user.staffPassword == "secret@123"){
+            this.user.staffFullName = "SuperAdmin";
+            sessionStorage.setItem('staffname', "Super Admin");
+            this.signupService.setter(this.user);
+            this.router.navigate(['/admin']);
+          }else if(this.user.staffUserName == this.users[i].staffUserName && this.user.staffPassword == this.users[i].staffPassword){
             this.ack = "Login successful";
-            this.signupService.setter(this.users[i]);
-            this.router.navigate(['/staff']);
-            
+            sessionStorage.setItem('staffid', this.users[i].staffId);
+            sessionStorage.setItem('staffname', this.users[i].staffFullName);
+            this.router.navigate(['/staffheader']);
           }
-          
+
         }
       },error=>console.log(error));
 

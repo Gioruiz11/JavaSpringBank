@@ -38,10 +38,12 @@ export class LoginComponent implements OnInit {
         for(let i=0; i<data.length; i++){
           console.log(this.users)
           console.log(this.user)
+
           if(this.user.userName == this.users[i].userName && this.user.password == this.users[i].password){
             this.ack = "Login successful";
-            this.signupService.setter(this.users[i]);
-            this.router.navigate(['/customer']);
+            sessionStorage.setItem('custid', this.users[i].customerId);
+            sessionStorage.setItem('custname', this.users[i].fullName);
+            this.router.navigate(['/profile']);
           }
         }
       },error=>console.log(error));

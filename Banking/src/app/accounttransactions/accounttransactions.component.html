@@ -1,0 +1,65 @@
+<app-staffheader></app-staffheader>
+<div id="Search Account">
+    <h1>Search Account by ID</h1>
+   
+    <form [formGroup]="SearchForm"  (ngSubmit)="getaccountinfo(accId.value); getaccountname(accId.value)">
+        <label for="Account Id">ID</label>
+        <input type="number" id="Account" #accId name="Account" required formControlName="id" />
+        <br />
+        <button type="submit">Search</button>
+        
+       
+    </form>
+   
+</div>
+
+
+<table class="table " *ngIf= "users.accountNumber != undefined" then> 
+    <tr>
+        <th scope="col">#</th>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Balance</th>
+     
+        
+
+
+
+    </tr>
+    <tr >
+        <th scope="row">#</th>
+           
+    <td>{{users.accountNumber}}</td>
+    <td>{{name}}</td>
+    <td>{{users.accountBalance}}</td>
+    
+   
+        
+       
+    </tr>
+</table>
+<table class="table " *ngIf= "name!=undefined" then> 
+    <tr>
+        <th scope="col">#</th>
+        <th>Id</th>
+        <th>Reason</th>
+        <th>Amount</th>
+        <th>Dr/Cr</th>
+        
+
+
+
+    </tr>
+    <tr *ngFor="let user2 of users2">
+        <th scope="row">#</th>
+           
+    <td>{{user2.id}}</td>
+    <td>{{user2.reason}}</td>
+    <td>{{user2.amount}}</td>
+    <td *ngIf="user2.transactionType==false" >Debit</td>
+    <td *ngIf="user2.transactionType==true" >Credit</td>
+   
+        
+       
+    </tr>
+</table>

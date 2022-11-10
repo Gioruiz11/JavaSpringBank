@@ -24,4 +24,20 @@ export class ViewstaffComponent implements OnInit {
         {this.users=data},error=>console.log(error)) ;
   
   }
+
+  enable(id:any){
+    this.signupService.putuserList(id)
+      .subscribe(
+        (      data: any) => {
+          console.log(data);
+          
+          this.signupService.getuserList().subscribe(data =>{
+            
+            })
+        },
+        (      error: any) => console.log(error));
+  
+  
+  
+  }
 }

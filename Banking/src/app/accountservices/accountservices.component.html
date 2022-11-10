@@ -1,0 +1,28 @@
+<app-staffheader></app-staffheader>
+
+
+
+
+<table class="table " *ngIf= "users" then> 
+  <tr>
+      <th scope="col">#</th>
+      <th>Account Number</th>
+      <th>Date of Creation</th>
+      <th>Account Status</th>
+      <th>Account Type</th>
+      <th>Account Balance</th>
+
+
+
+  </tr>
+  <tr *ngFor="let user of users">
+      <th scope="row">#</th>
+      <td>{{user.accountNumber}}</td>
+      <td>{{user.dateOfCreation}}</td>
+      <td>{{user.accountStatus}}</td>
+      <td>{{user.accountType}}</td>
+      <td>{{user.accountBalance}}</td>
+      <td> <button class="btn btn-danger btn-rounded" (click)="changeuserStatus(user.accountNumber)">Change Status</button></td> 
+      
+     
+  </tr>
