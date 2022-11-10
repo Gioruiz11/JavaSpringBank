@@ -17,6 +17,7 @@ export class AccounttransactionsComponent implements OnInit {
   users:any;
   users1:any;
   name!: string;
+  users2:any
     constructor(private signupService:AccountService, private cserverice:CustomerService, private router:Router) { }
   
     ngOnInit(): void {
@@ -57,9 +58,12 @@ export class AccounttransactionsComponent implements OnInit {
     getaccountname(id:any){
       this.signupService.getAccountName(id)
     .subscribe(data=>
-      {this.users1=data},error=>console.log(error)) ;
-
-        console.log(this.name)
+      {this.users1=data; this.name=this.users1;this.signupService.getAccountStatement(id).subscribe(data =>{
+        this.users2 =data
+        }) },error=>console.log(error)) ;
+      console.log(this.users1)
+      
+      
     }
 
   }
