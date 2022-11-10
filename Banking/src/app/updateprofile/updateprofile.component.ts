@@ -39,6 +39,7 @@ export class UpdateprofileComponent implements OnInit {
     //console.log('Name:' + this.somedata.name);
     //console.log('Series:' + this.somedata.series);
 
+    this.user.customerId = sessionStorage.getItem("custid");
     this.user.fullName=this.f['fullName'].value;         //Angular
     this.user.userName=this.f['userName'].value;
     this.user.password=this.f['password'].value;
@@ -51,7 +52,7 @@ export class UpdateprofileComponent implements OnInit {
     console.log(this.profileForm.value)
     //Post Operationwill be executed here
     if(this.user.userName!='' && this.user.password!=null){
-    this.updateUser();
+      this.updateUser();
     }
     }
 
