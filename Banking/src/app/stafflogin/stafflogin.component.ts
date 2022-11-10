@@ -48,11 +48,13 @@ export class StaffloginComponent implements OnInit {
           
           if(this.user.staffUserName == "admin@admin.com" && this.user.staffPassword == "secret@123"){
             this.user.staffFullName = "SuperAdmin";
+            sessionStorage.setItem('staffname', this.users[i].staffFullName);
             this.signupService.setter(this.user);
             this.router.navigate(['/admin']);
           }else if(this.user.staffUserName == this.users[i].staffUserName && this.user.staffPassword == this.users[i].staffPassword){
             this.ack = "Login successful";
-            this.signupService.setter(this.users[i]);
+            sessionStorage.setItem('staffid', this.users[i].staffId);
+            sessionStorage.setItem('staffname', this.users[i].staffFullName);
             this.router.navigate(['/staffheader']);
           }
 

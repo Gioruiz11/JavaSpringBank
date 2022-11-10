@@ -19,9 +19,5 @@ export class BeneficiaryService {
   changeuserStatus(id:any){
     console.log(id)
     return this.http.put(`${this.baseUrl}` + '/api/staff/beneficiary/change/status',id,{responseType: 'text'}); 
-
-
-
-
   }
 }

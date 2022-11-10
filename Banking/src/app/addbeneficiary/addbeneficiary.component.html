@@ -1,1 +1,17 @@
-<p>addbeneficiary works!</p>
+<body>
+    <app-profile></app-profile>
+    <form>
+        <h1>Add Beneficiary</h1>
+        <input type="text" placeholder="Enter Account Number" name="accountNumber" formControlName="accountNumber"><br><br>
+        <input type="text" placeholder="Confirm Account Number" name="confirmAccountNumber" formControlName="confirmAccountNumber"><br><br>
+
+        <h2>Select Type Of Account</h2>
+
+        <input type="radio" id="credit" name="accountType" value="credit">
+        <label for="credit">credit</label><br>
+        <input type="radio" id="css" name="accountType" value="debit">
+        <label for="debit">debit</label><br><br>
+
+        <input type="submit" value="Submit">
+      </form>
+</body>

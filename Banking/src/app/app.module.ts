@@ -49,9 +49,8 @@ import { SuperAdmin1Component } from './super-admin1/super-admin1.component';
     RemovebeneficiaryComponent,
     TransfermoneyComponent,
     ViewstatementComponent,
-    ProfileheaderComponent
+    ProfileheaderComponent,
     StaffheaderComponent,
- 
     SearchcustomerComponent,
     BeneficiaryservicesComponent,
     AccountservicesComponent,

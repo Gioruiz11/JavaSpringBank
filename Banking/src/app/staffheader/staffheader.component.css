@@ -1,5 +1,26 @@
 #header {
     border: 1px solid black;
-    padding: 3%;
+    padding: 1%;
     border-radius: 3%;
+    text-align: center;
+    padding-left: 0%;
+}
+
+#staffnav {
+    margin-top: 1%;
+}
+#staffnav a {
+    margin-left: 10%;
+    border: 1px solid black;
+    padding: 0.5%;
+    border-radius: 3%;
+}
+
+#staffnav a:hover {
+    background-color: #AAAAAA;
+}
+a {
+    text-decoration: none;
+    font-size: 18pt;
+    color: black;
 }

@@ -12,10 +12,8 @@ import { StaffService } from '../staff.service';
 })
 export class HeaderComponent implements OnInit {
 
-  cust = false;
-  staff = false;
-  s: Staff = new Staff();
-  c: Customer = new Customer();
+  s : any;
+  c : any;
 
   constructor(private customerService:CustomerService, private staffService: StaffService) {}
 
@@ -26,20 +24,21 @@ export class HeaderComponent implements OnInit {
       
   }
 
+
   ngDoCheck(): void {
-    if(this.customerService.getter().fullName != null){
-      this.cust=true;
-      this.c = this.customerService.getter();
-    }
-    if(this.staffService.getter().staffFullName != null){
-      this.staff=true;
-      this.s = this.staffService.getter();
-    }
+    this.s = sessionStorage.getItem('staffname');
+    this.c = sessionStorage.getItem('custname');
+
+    console.log(this.s);
+    console.log(this.c);
   }
+    
 
   logout() {
-    this.customerService.setter(new Customer());
-    this.staffService.setter(new Staff());
+    sessionStorage.removeItem('custid');
+    sessionStorage.removeItem('custname');
+    sessionStorage.removeItem('staffid');
+    sessionStorage.removeItem('staffname');
   }
 
 }
