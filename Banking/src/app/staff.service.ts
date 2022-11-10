@@ -17,13 +17,13 @@ export class StaffService {
 
   getuserList(): Observable<any> {
 
-    return this.http.get(`${this.baseUrl}` + '/api/admin/addstaff');  //will change
+    return this.http.get(`${this.baseUrl}` + '/api/admin/getstaff');  //will change
 
   }
 
   createuserlist(user: object): Observable<object> {
     console.log("success");
-    return this.http.post(`${this.baseUrl}` + '/api/admin/getstaff', user);
+    return this.http.post(`${this.baseUrl}` + '/api/admin/addstaff', user);
   }
 
   putuserList(id:any): Observable<object> {
