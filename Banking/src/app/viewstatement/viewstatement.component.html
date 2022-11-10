@@ -1,61 +1,59 @@
 <app-profile></app-profile>
-<div id="Search Account">
-    <h1>Search Account by ID</h1>
-   
-    <form [formGroup]="SearchForm"  (ngSubmit)="getTranscation(accId.value);">
-        <label for="Account Id">ID</label>
-        <input type="number" id="Account" #accId name="Account" required formControlName="id" />
-        <br />
-        <button type="submit">Search</button>
+<div id = "view">
+    <div id="SearchAccount">
+        <h1>Search Account by ID</h1>
+    
+        <form [formGroup]="SearchForm"  (ngSubmit)="getTranscation(accId.value);">
+            <input type="number" id="Account" placeholder="Enter Account ID"#accId name="Account" required formControlName="id" />
+            <button type="submit">Search</button>
+        </form>
+    
+    </div>
+
+    <table class="table"> 
+        <tr>
+            <th scope="col">#</th>
+            <th>Account Number</th>
+            <th>Balance</th>
         
-       
-    </form>
-   
+            
+
+
+
+        </tr>
+        <tr *ngFor="let user of users">
+            <th scope="row">#</th>
+            
+        <td>{{user.accountNumber}}</td>
+        <td>{{user.accountBalance}}</td>
+
+        </tr>
+        <br><br>
+    </table>
+
+    <table class="table " *ngIf= "users2!=undefined" then> 
+        <tr>
+            <th scope="col">#</th>
+            <th>Id</th>
+            <th>Reason</th>
+            <th>Amount</th>
+            <th>Dr/Cr</th>
+            
+
+
+
+        </tr>
+        <tr *ngFor="let user2 of users2">
+            <th scope="row">#</th>
+            
+        <td>{{user2.id}}</td>
+        <td>{{user2.reason}}</td>
+        <td>{{user2.amount}}</td>
+        <td *ngIf="user2.transactionType==false" >Debit</td>
+        <td *ngIf="user2.transactionType==true" >Credit</td>
+    
+            
+        
+        </tr>
+    </table>
 </div>
-
-<table class="table"> 
-    <tr>
-        <th scope="col">#</th>
-        <th>Account Number</th>
-        <th>Balance</th>
-     
-        
-
-
-
-    </tr>
-    <tr *ngFor="let user of users">
-        <th scope="row">#</th>
-           
-    <td>{{user.accountNumber}}</td>
-    <td>{{user.accountBalance}}</td>
-
-    </tr>
-    <br><br>
-</table>
-
-<table class="table " *ngIf= "users2!=undefined" then> 
-    <tr>
-        <th scope="col">#</th>
-        <th>Id</th>
-        <th>Reason</th>
-        <th>Amount</th>
-        <th>Dr/Cr</th>
-        
-
-
-
-    </tr>
-    <tr *ngFor="let user2 of users2">
-        <th scope="row">#</th>
-           
-    <td>{{user2.id}}</td>
-    <td>{{user2.reason}}</td>
-    <td>{{user2.amount}}</td>
-    <td *ngIf="user2.transactionType==false" >Debit</td>
-    <td *ngIf="user2.transactionType==true" >Credit</td>
-   
-        
-       
-    </tr>
-</table>
