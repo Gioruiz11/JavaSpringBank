@@ -33,6 +33,7 @@ import { CreatestaffComponent } from './createstaff/createstaff.component';
 import { ViewstaffComponent } from './viewstaff/viewstaff.component';
 import { SuperAdminComponent } from './super-admin/super-admin.component';
 import { SuperAdmin1Component } from './super-admin1/super-admin1.component';
+import { UpdateprofileComponent } from './updateprofile/updateprofile.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { SuperAdmin1Component } from './super-admin1/super-admin1.component';
     CreatestaffComponent,
     ViewstaffComponent,
     SuperAdminComponent,
-    SuperAdmin1Component
+    SuperAdmin1Component,
+    UpdateprofileComponent
   ],
   imports: [
     BrowserModule,

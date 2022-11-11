@@ -1,20 +1,9 @@
-#profile {
-    /* border: 1px solid black;
-    border-radius: 0%;
-    border-top: 2%;
-    border-right: 2%; */
-    width: 35%;
-    float: left;
-    margin-left: 5%;
-    margin-top: 3%;
-}
-
 #account {
     width: 25%;
     border: 1px solid black;
     float: left;
     margin-top: -17%;
-    margin-left: 45%;
+    margin-left: 25%;
     padding-left: 4%;
     padding-right: 4%;
     padding-bottom: 20%;
@@ -22,12 +11,15 @@
     text-align: center;
 }
 
-/* #p{
-    color: black;
-    font-size: 24;
-    font-family: cursive;
-} */
 
 #checkbox{
     text-align: center;
+}
+
+h2 {
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+input{
+    margin-bottom: 10px;
 }

@@ -1,6 +1,8 @@
 package com.learning.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -9,7 +11,9 @@ import org.springframework.beans.factory.annotation.Value;
 @Entity
 @Table(name="staff")
 public class Staff {
+
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long staffId;
 	private String staffFullName;
 	private String staffUserName;

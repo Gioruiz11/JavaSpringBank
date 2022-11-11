@@ -13,6 +13,7 @@ export class CreatestaffComponent implements OnInit {
 
   user : Staff= new Staff();
   users: any;
+  ack: any;
 
   constructor(private signupService:StaffService, private router: Router) { }
 
@@ -53,6 +54,7 @@ export class CreatestaffComponent implements OnInit {
     this.signupService.createuserlist(this.user).subscribe((data: any)=>
       console.log(data),(error: any)=>console.log(error));
     this.user = new Staff();
+    this.ack = "Creation Successful";
   }
 
 }

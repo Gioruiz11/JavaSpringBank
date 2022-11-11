@@ -16,13 +16,16 @@ export class StaffloginComponent implements OnInit {
   user : Staff= new Staff();
   users: any;
   ack:any;
- 
+  ack1:any;
+  loginack: any;
  
   
   constructor(private signupService:StaffService, private router: Router) { }
 
   ngOnInit(): void {
     
+    this.ack1 = "Fill In the Reqired Credentials";
+    this.loginack ="Fill In the Reqired Credentials";
   }
 
   profileForm = new FormGroup({
@@ -39,7 +42,13 @@ export class StaffloginComponent implements OnInit {
     this.user.staffPassword = this.f['password'].value;
     
     if(this.user.staffUserName!='' && this.user.staffPassword !=null){
-
+      
+      if(this.user.staffUserName == "admin@admin.com" && this.user.staffPassword == "secret@123"){
+        this.user.staffFullName = "SuperAdmin";
+        sessionStorage.setItem('staffname', "Super Admin");
+        this.signupService.setter(this.user);
+        this.router.navigate(['/admin']);
+      }
       this.signupService.getuserList().subscribe(data=>{this.users=data;
         for(let i=0; i<data.length; i++){
           console.log(this.users)

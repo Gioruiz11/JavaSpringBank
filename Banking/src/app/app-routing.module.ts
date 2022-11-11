@@ -23,7 +23,7 @@ import { AddbeneficiaryComponent } from './addbeneficiary/addbeneficiary.compone
 import { RemovebeneficiaryComponent } from './removebeneficiary/removebeneficiary.component';
 import { TransfermoneyComponent } from './transfermoney/transfermoney.component';
 import { ViewstatementComponent } from './viewstatement/viewstatement.component';
-
+import { UpdateprofileComponent } from './updateprofile/updateprofile.component';
 
 const routes: Routes = [{ path: '', component: LoginComponent },
 { path: 'stafflogin', component: StaffloginComponent },
@@ -48,6 +48,7 @@ const routes: Routes = [{ path: '', component: LoginComponent },
 { path: 'removebeneficiary', component: RemovebeneficiaryComponent },
 { path: 'transfermoney', component: TransfermoneyComponent },
 { path: 'viewstatement', component: ViewstatementComponent },
+{ path: 'updateprofile', component: UpdateprofileComponent },
 ];
 
 

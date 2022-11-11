@@ -5,11 +5,11 @@ import { Customer } from '../customer';
 import { CustomerService } from '../customer.service';
 
 @Component({
-  selector: 'app-registration',
-  templateUrl: './registration.component.html',
-  styleUrls: ['./registration.component.css']
+  selector: 'app-updateprofile',
+  templateUrl: './updateprofile.component.html',
+  styleUrls: ['./updateprofile.component.css']
 })
-export class RegistrationComponent implements OnInit {
+export class UpdateprofileComponent implements OnInit {
 
   user : Customer= new Customer();
   users: any;
@@ -39,6 +39,7 @@ export class RegistrationComponent implements OnInit {
     //console.log('Name:' + this.somedata.name);
     //console.log('Series:' + this.somedata.series);
 
+    this.user.customerId = sessionStorage.getItem("custid");
     this.user.fullName=this.f['fullName'].value;         //Angular
     this.user.userName=this.f['userName'].value;
     this.user.password=this.f['password'].value;
@@ -51,19 +52,15 @@ export class RegistrationComponent implements OnInit {
     console.log(this.profileForm.value)
     //Post Operationwill be executed here
     if(this.user.userName!='' && this.user.password!=null){
-    this.addUser();
+      this.updateUser();
     }
-    //this.signupService.createuserlist(this.user)
-    //Here logic will be there Develop your application can add logic here to call API Hit
-    //this.router.navigate(['\home']);
-  }
+    }
 
-  addUser() {
-    this.signupService.createuserlist(this.user).subscribe((data: any)=>
-      console.log(data),(error: any)=>console.log(error));
-    this.user = new Customer();
-    this.router.navigate(["/"]);
-
-  }
-
+    updateUser() {
+      this.signupService.putuserlist(this.user).subscribe((data: any)=>
+        console.log(data),(error: any)=>console.log(error));
+      this.user = new Customer();
+      this.router.navigate(["/profile"]);
+    }
 }
+

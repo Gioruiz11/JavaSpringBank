@@ -5,5 +5,4 @@ export class Beneficiary {
     active:any;
     approved:any;
     addedDate:any;
-  
 }
